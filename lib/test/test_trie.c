@@ -25,7 +25,7 @@ main(void) {
     }
 
     for (int i = 0; i < N; ++i) {
-        v_free(&vals[i]);                      // we can do anithing with vals
+        v_free(&vals[i]);                      // we can do anything with vals
     }
 
     for (int i = 0; i < N; ++i) {
@@ -35,5 +35,6 @@ main(void) {
         v_print(&res);
         v_free(&res);
     }
+    t_free(&t);
     return 0;
 }

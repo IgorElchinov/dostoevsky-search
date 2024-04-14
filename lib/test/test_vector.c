@@ -38,7 +38,7 @@ main(void) {
     Vector v2 = {0};
     v_copy(&v1, &v2);
     assert(v1.size == v2.size);
-    assert(v1.capacity = v2.capacity);
+    assert(v1.capacity == v2.capacity);
     for (int i = 0; i < v1.size; ++i) {
         assert(v_get(&v1, i) == v_get(&v2, i));
     }
