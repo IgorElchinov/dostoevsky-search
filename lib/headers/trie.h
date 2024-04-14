@@ -21,7 +21,7 @@ typedef struct Trie
 extern int char_to_num(char c);
 
 extern Trie t_init();
-extern void t_free();
+extern void t_free(Trie *trie);
 extern void t_add(Trie *trie, char *word, Vector data);
 extern Vector t_get(Trie *trie, char *word);
 

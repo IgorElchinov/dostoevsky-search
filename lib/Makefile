@@ -1,6 +1,6 @@
 
 
-TARGET=vector
+TARGET=trie
 CC=gcc
 MAINDIR=./test
 SRCDIR=./src
@@ -58,3 +58,6 @@ unordered_map_dependencies:
 list_str_dependencies:
 
 vector_dependencies:
+
+trie_dependencies:
+	$(eval DEPENDENCIES += -lvector)

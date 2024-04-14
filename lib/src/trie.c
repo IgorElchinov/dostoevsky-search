@@ -27,8 +27,30 @@ t_init() {
     return trie;
 }
 
+static void
+free_node(TrieNode *node) {
+    if (node == NULL) {
+        fprintf(stderr, "%s: trie node ptr is NULL", __func__);
+        exit(1);
+    }
+    for (int i = 0; i < MAX_NEXT_NUM; ++i) {
+        if (node->next[i] != NULL) {
+            free_node(node->next[i]);
+        }
+    }
+    v_free(&node->data);
+    free(node);
+}
+
 void
 t_free(Trie *trie) {
+    if (trie == NULL) {
+        fprintf(stderr, "%s: trie ptr is NULL", __func__);
+        exit(1);
+    }
+    if (trie->root != NULL) {
+        free_node(trie->root);
+    }
     return;
 }
 
