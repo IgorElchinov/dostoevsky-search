@@ -119,6 +119,9 @@ v_copy(const Vector *src, Vector *dest) {
         fprintf(stderr, "%s: destination pointer is NULL\n", __func__);
         exit(1);
     }
+    if (dest->data != NULL) {
+        free(dest->data);
+    }
     *dest = v_init(src->capacity);
     dest->size = dest->size;
     memcpy(dest->data, src->data, src->size);
