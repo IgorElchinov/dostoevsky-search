@@ -1,0 +1,71 @@
+#include "trie.h"
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int 
+char_to_num(char c) {
+    return c - 'a';
+}
+
+static TrieNode *
+add_node() {
+    TrieNode *res = calloc(1, sizeof(*res));
+    for (size_t i = 0; i < MAX_NEXT_NUM; ++i) {
+        res->next[i] = NULL;
+    }
+    res->is_terminal = 0;
+    res->data = v_init(0);
+    return res;
+}
+
+Trie
+t_init() {
+    Trie trie;
+    trie.root = add_node();
+    return trie;
+}
+
+void
+t_free(Trie *trie) {
+    return;
+}
+
+void 
+t_add(Trie *trie, char *word, Vector data) {
+    if (trie->root == NULL) {
+        *trie = t_init();
+    }
+    size_t word_len = strlen(word);
+    TrieNode *cur = trie->root;
+    for (int i = 0; i < word_len; ++i) {
+        if (cur->next[char_to_num(word[i])] == NULL) {
+            cur->next[char_to_num(word[i])] = add_node();
+        }
+        cur = cur->next[char_to_num(word[i])];
+    }
+    cur->is_terminal = 1;
+    v_copy(&data, &cur->data);
+    return;
+}
+
+Vector
+t_get(Trie *trie, char *word) {
+    Vector res = v_init(0);
+    if (trie->root == NULL) {
+        return res;
+    }
+    size_t word_len = strlen(word);
+    TrieNode *cur = trie->root;
+    for (int i = 0; i < word_len; ++i) {
+        if (cur->next[char_to_num(word[i])] == NULL) {
+            return res;
+        }
+        cur = cur->next[char_to_num(word[i])];
+    }
+    if (cur->is_terminal) {
+        v_copy(&cur->data, &res);
+    }
+    return res;
+}
