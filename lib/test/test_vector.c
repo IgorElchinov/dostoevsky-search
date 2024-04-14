@@ -34,7 +34,17 @@ main(void) {
 
     v_update(&v1, 0, N/2);
     assert(v_get(&v1, N/2) == 0); 
+
+    Vector v2 = {0};
+    v_copy(&v1, &v2);
+    assert(v1.size == v2.size);
+    assert(v1.capacity = v2.capacity);
+    for (int i = 0; i < v1.size; ++i) {
+        assert(v_get(&v1, i) == v_get(&v2, i));
+    }
+
     free(v1.data);
+    free(v2.data);
 
     printf("Ok!\n");
     return 0;

@@ -1,6 +1,7 @@
 #include "vector.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 Vector
 v_init(size_t size) {
@@ -123,7 +124,7 @@ v_copy(const Vector *src, Vector *dest) {
         free(dest->data);
     }
     *dest = v_init(src->capacity);
-    dest->size = dest->size;
-    memcpy(dest->data, src->data, src->size);
+    dest->size = src->size;
+    memcpy(dest->data, src->data, src->size * sizeof(*src->data));
     return;
 }
