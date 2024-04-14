@@ -108,3 +108,19 @@ v_print(Vector *vector) {
     printf("\n");
     return;
 }
+
+void
+v_copy(const Vector *src, Vector *dest) {
+    if (src == NULL) {
+        fprintf(stderr, "%s: source pointer is NULL\n", __func__);
+        exit(1);
+    }
+    if (dest == NULL) {
+        fprintf(stderr, "%s: destination pointer is NULL\n", __func__);
+        exit(1);
+    }
+    *dest = v_init(src->capacity);
+    dest->size = dest->size;
+    memcpy(dest->data, src->data, src->size);
+    return;
+}

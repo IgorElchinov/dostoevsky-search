@@ -18,5 +18,6 @@ extern void v_erase(Vector *vector, size_t pos);
 extern void v_print(Vector *vector);
 extern Vector v_init(size_t size);
 extern void v_free(Vector *vector);
+extern void v_copy(const Vector *src, Vector *dest);
 
 #endif
