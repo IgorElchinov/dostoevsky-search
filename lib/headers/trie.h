@@ -4,7 +4,7 @@
 #include "vector.h"
 
 enum {
-    MAX_NEXT_NUM = 26,
+    MAX_NEXT_NUM = 65,
 };
 
 typedef struct TrieNode {

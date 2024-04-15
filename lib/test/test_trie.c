@@ -7,8 +7,9 @@ enum {
     M = 5,
 };
 
-char *words[N] = {"abba", "abaka", "abbabba", "aber", "abero"};
+char *words[N] = {"abba", "abaka", "abba-abba", "ab'er", "ab`e-RO"};
 Vector vals[N] = {0};
+char *add_word = "aaaa";
 
 int
 main(void) {
@@ -35,6 +36,11 @@ main(void) {
         v_print(&res);
         v_free(&res);
     }
-    t_free(&t);
+    Vector res = {0};
+    res = t_get(&t, add_word);
+    printf("Get %s: ", add_word);
+    v_print(&res);
+    v_free(&res);
+    t_free(&t); 
     return 0;
 }

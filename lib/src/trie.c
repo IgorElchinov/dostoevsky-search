@@ -4,9 +4,46 @@
 #include <stdio.h>
 #include <string.h>
 
+const static char *__valid_chars = "`,',-,a-z,A-Z,0-9";      // can be changed
+
 int 
 char_to_num(char c) {
-    return c - 'a';
+    int n = strlen(__valid_chars);
+    int cur_ind = 0;
+    signed char prev_c = -1, cur_c = -1;
+    int range = 0;
+    for (int i = 0; i < n; ++i) {
+        if (i & 1) {
+            if (__valid_chars[i] == '-') {
+                range = 1;
+            } else {
+                range = 0;
+            }
+        } else {
+            prev_c = cur_c;
+            cur_c = __valid_chars[i];
+            if (range) {
+                if (cur_c <= prev_c) {
+                    fprintf(stderr, "%s: incorrect valid chars string format\n", __func__);
+                    fflush(stderr);
+                    exit(1);
+                }
+                if (prev_c <= c && c <= cur_c) {
+                    return cur_ind + c - prev_c - 1;
+                }
+                cur_ind += cur_c - prev_c;
+            } else {
+                if (cur_c == c) {
+                    return cur_ind;
+                }
+                cur_ind++;
+            }
+        }
+    }
+    fprintf(stderr, "%s: invalid symbol '%c'\n", __func__, c);
+    fflush(stderr);
+    exit(1);
+    return -1;
 }
 
 static TrieNode *
@@ -31,6 +68,7 @@ static void
 free_node(TrieNode *node) {
     if (node == NULL) {
         fprintf(stderr, "%s: trie node ptr is NULL", __func__);
+        fflush(stderr);
         exit(1);
     }
     for (int i = 0; i < MAX_NEXT_NUM; ++i) {
@@ -46,6 +84,7 @@ void
 t_free(Trie *trie) {
     if (trie == NULL) {
         fprintf(stderr, "%s: trie ptr is NULL", __func__);
+        fflush(stderr);
         exit(1);
     }
     if (trie->root != NULL) {
