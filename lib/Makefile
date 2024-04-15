@@ -7,16 +7,16 @@ SRCDIR=./src
 BINDIR=./bin
 HEADDIR=./headers
 FLAGS= -g -Wall -iquote $(HEADDIR)
-#ADD= -ldeque -lvector -llist_str -lhash_table
-DEPENDENCIES= # -llist_str #-lhash_table  #to be done
+ADD= 
+DEPENDENCIES= 
 
 all: test_$(TARGET).out
 
 test_$(TARGET).out: test_$(TARGET).o lib$(TARGET).so $(TARGET)_dependencies #final compilation
-	$(CC) $< -L$(BINDIR) -o $@ -l$(TARGET) $(DEPENDENCIES)
+	$(CC) $< -L$(BINDIR) -o $@ -l$(TARGET) $(DEPENDENCIES) $(ADD)
 
 test_$(TARGET).o: $(MAINDIR)/test_$(TARGET).c #compiling example
-	$(CC) -c $< -o $@ $(FLAGS)
+	$(CC) -c $< -o $@ $(FLAGS) $(ADD)
 
 $(TARGET).so: $(HEADDIR)/$(TARGET).h
 

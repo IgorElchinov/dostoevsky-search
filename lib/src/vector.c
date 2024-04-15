@@ -13,6 +13,7 @@ v_init(size_t size) {
     vector.data = calloc(size, sizeof(*vector.data));
     if (vector.data == NULL) {
         fprintf(stderr, "%s: memory allocation error\n", __func__);
+        fflush(stderr);
         exit(1);
     }
     vector.capacity = size;
@@ -70,6 +71,7 @@ v_push_back(Vector *vector, int elem) {
         vector->data = realloc(vector->data, 2 * vector->capacity * sizeof(*vector->data));
         if (vector->data == NULL) {
             fprintf(stderr, "%s: memory allocation error\n", __func__);
+            fflush(stderr);
             exit(1);
         }
         vector->capacity *= 2;
@@ -103,6 +105,9 @@ v_erase(Vector *vector, size_t pos) {
 
 void
 v_print(Vector *vector) {
+    if (vector->size == 0) {
+        printf("Empty vector");
+    }
     for (size_t i = 0; i < vector->size; ++i) {
         printf("%d ", v_get(vector, i));
     }
@@ -114,10 +119,12 @@ void
 v_copy(const Vector *src, Vector *dest) {
     if (src == NULL) {
         fprintf(stderr, "%s: source pointer is NULL\n", __func__);
+        fflush(stderr);
         exit(1);
     }
     if (dest == NULL) {
         fprintf(stderr, "%s: destination pointer is NULL\n", __func__);
+        fflush(stderr);
         exit(1);
     }
     if (dest->data != NULL) {
