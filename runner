@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./$1
+echo -e "\033[3;32mProgram has stopped with exit code \033[31m$?\033[0m"

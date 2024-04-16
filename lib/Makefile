@@ -30,8 +30,8 @@ libtrie.so: $(SRCDIR)/trie.c                                        # compiling 
 
 lib: lib$(OBJ).so
 
-run: all #target to run code
+run: all                                                            # target to run code
 	./runner $(TARGET)
 
-clean:
+clean:                                                              # target to clean binary files
 	rm -f *.out *.o

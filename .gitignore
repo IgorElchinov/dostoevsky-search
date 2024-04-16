@@ -1,2 +1,8 @@
 #ignore .vscode file
 .vscode/
+
+#ignore .o and .a files:
+*.[oa]
+
+#ignore .out files:
+*.out
