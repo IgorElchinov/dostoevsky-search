@@ -1,6 +1,6 @@
 
-
-TARGET=trie
+OBJ=trie
+TARGET=test_$(OBJ).out
 CC=gcc
 MAINDIR=./test
 SRCDIR=./src
@@ -8,56 +8,30 @@ BINDIR=./bin
 HEADDIR=./headers
 FLAGS= -g -Wall -iquote $(HEADDIR)
 ADD= 
-DEPENDENCIES= 
 
-all: test_$(TARGET).out
+all: $(TARGET)
 
-test_$(TARGET).out: test_$(TARGET).o lib$(TARGET).so $(TARGET)_dependencies #final compilation
-	$(CC) $< -L$(BINDIR) -o $@ -l$(TARGET) $(DEPENDENCIES) $(ADD)
+test_vector.out: test_vector.o libvector.so                         # final compilation for vector
+	$(CC) $< -L$(BINDIR) -o $@ -lvector $(ADD)
 
-test_$(TARGET).o: $(MAINDIR)/test_$(TARGET).c #compiling example
+test_trie.out: test_trie.o libtrie.so libvector.so                  # final compilation for trie
+	$(CC) $< -L$(BINDIR) -o $@ -lvector -ltrie $(ADD)
+
+test_$(OBJ).o: $(MAINDIR)/test_$(OBJ).c                             # compiling example
 	$(CC) -c $< -o $@ $(FLAGS) $(ADD)
 
-$(TARGET).so: $(HEADDIR)/$(TARGET).h
+$(OBJ).so: $(HEADDIR)/$(OBJ).h                                      # make libraries dependant from their header files
 
-lib$(TARGET).so: $(SRCDIR)/$(TARGET).c $(TARGET)_dependencies #compiling dynamic library
-	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC $(DEPENDENCIES)
+libvector.so: $(SRCDIR)/vector.c                                    # compiling dynamic library for vector
+	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC
 
-lib: lib$(TARGET).so
+libtrie.so: $(SRCDIR)/trie.c                                        # compiling dynamic library for trie
+	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC -lvector
 
-superlib: libcontainers.so
-
-libcontainers.so: $(HEADDIR)/containers.h
-
-libcontainers.so: $(SRCDIR)/*.c
-	$(CC) --shared $^ -o $(BINDIR)/$@ $(FLAGS) -L$(BINDIR) -fPIC
+lib: lib$(OBJ).so
 
 run: all #target to run code
-	./runner test_$(TARGET).out
+	./runner $(TARGET)
 
 clean:
 	rm -f *.out *.o
-
-unordered_set_dependencies:
-	$(eval DEPENDENCIES += -llist_str)
-	$(eval DEPENDENCIES += -lhash_table)
-
-hash_table_dependencies:
-	$(eval DEPENDENCIES += -llist_str)
-
-list_of_map_nodes_dependencies:
-	$(eval DEPENDENCIES += -lmap_node)
-
-
-unordered_map_dependencies:
-	$(eval DEPENDENCIES += -llist_of_map_nodes)
-	$(eval DEPENDENCIES += -lmap_node)
-	$(eval DEPENDENCIES += -lhash_table)
-	$(eval DEPENDENCIES += -llist_str)
-
-list_str_dependencies:
-
-vector_dependencies:
-
-trie_dependencies:
-	$(eval DEPENDENCIES += -lvector)
