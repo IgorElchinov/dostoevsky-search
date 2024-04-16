@@ -4,10 +4,10 @@
 #include <stdio.h>
 #include <string.h>
 
-const static char *__valid_chars = "`,',-,a-z,A-Z,0-9";      // can be changed
+const static char *__valid_chars = "`,',-,a-z,A-Z,0-9";             // can be changed
 
 int 
-char_to_num(char c) {
+char_to_ind(char c) {
     int n = strlen(__valid_chars);
     int cur_ind = 0;
     signed char prev_c = -1, cur_c = -1;
@@ -94,20 +94,20 @@ t_free(Trie *trie) {
 }
 
 void 
-t_add(Trie *trie, char *word, Vector data) {
+t_add(Trie *trie, char *word, Vector docs) {
     if (trie->root == NULL) {
         *trie = t_init();
     }
     size_t word_len = strlen(word);
     TrieNode *cur = trie->root;
     for (int i = 0; i < word_len; ++i) {
-        if (cur->next[char_to_num(word[i])] == NULL) {
-            cur->next[char_to_num(word[i])] = add_node();
+        if (cur->next[char_to_ind(word[i])] == NULL) {
+            cur->next[char_to_ind(word[i])] = add_node();
         }
-        cur = cur->next[char_to_num(word[i])];
+        cur = cur->next[char_to_ind(word[i])];
     }
     cur->is_terminal = 1;
-    v_copy(&data, &cur->data);
+    v_copy(&docs, &cur->data);
     return;
 }
 
@@ -120,13 +120,43 @@ t_get(Trie *trie, char *word) {
     size_t word_len = strlen(word);
     TrieNode *cur = trie->root;
     for (int i = 0; i < word_len; ++i) {
-        if (cur->next[char_to_num(word[i])] == NULL) {
+        if (cur->next[char_to_ind(word[i])] == NULL) {
             return res;
         }
-        cur = cur->next[char_to_num(word[i])];
+        cur = cur->next[char_to_ind(word[i])];
     }
     if (cur->is_terminal) {
         v_copy(&cur->data, &res);
     }
     return res;
+}
+
+Vector *
+t_get_ptr(Trie *trie, char *word) {
+    if (trie->root == NULL) {
+        return NULL;
+    }
+    size_t word_len = strlen(word);
+    TrieNode *cur = trie->root;
+    for (int i = 0; i < word_len; ++i) {
+        if (cur->next[char_to_ind(word[i])] == NULL) {
+            return NULL;
+        }
+        cur = cur->next[char_to_ind(word[i])];
+    }
+    if (cur->is_terminal) {
+        return &cur->data;
+    }
+    return NULL;
+}
+
+void
+t_push_back(Trie *trie, char *word, int doc) {
+    Vector *v = t_get_ptr(trie, word);
+    if (v == NULL) {
+        t_add(trie, word, v_init(0));
+        v = t_get_ptr(trie, word);
+    }
+    v_push_back(v, doc);
+    return;
 }
