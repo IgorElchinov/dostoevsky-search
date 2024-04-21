@@ -26,6 +26,13 @@ typedef struct HaffmanCode {
 } HaffmanCode;
 
 void
+swap_pairs(Pair *a, Pair *b) {
+    Pair tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+void
 quick_step(int start, int end, Pair *arr) {
     int i = start, j = end;
     int pivot = arr[(start + end) / 2].count;
@@ -235,6 +242,40 @@ compress(char *filename, char *compressed_filename, char *decompressed_file) {
     free(unsorted_code_table);
 }
 
+char *
+int_to_str(int num) {
+    char *tmp = calloc(100, sizeof(*tmp));
+    tmp[0] = 's';
+    tmp[1] = 'o';
+    tmp[2] = 'n';
+    tmp[3] = 'n';
+    tmp[4] = 'e';
+    tmp[5] = 't';
+    tmp[6] = '_';
+    if (num >= 100) {
+        tmp[7] = '1';
+        tmp[8] = (char) (num / 10 % 10 + 48);
+        tmp[9] = (char) (num % 10 + 48);
+        tmp[10] = '.';
+        tmp[11] = 't';
+        tmp[12] = 'x';
+        tmp[13] = 't';
+    } else if (num >= 10) {
+        tmp[7] = (char) (num / 10 % 10 + 48);
+        tmp[8] = (char) (num % 10 + 48);
+        tmp[9] = '.';
+        tmp[10] = 't';
+        tmp[11] = 'x';
+        tmp[12] = 't';
+    } else {
+        tmp[7] = (char) (num % 10 + 48);
+        tmp[8] = '.';
+        tmp[9] = 't';
+        tmp[10] = 'x';
+        tmp[11] = 't';
+    }
+    return tmp;
+}
 
 char *
 add(char *str1, char *str2) {
@@ -303,6 +344,6 @@ main() {
     //     free(tmp);
     //     free(tmp2);
     // }
-    compress("q.txt", "q_c.txt", "decompressed_war_and_peace.txt");
+    compress("war_and_peace.txt", "compressed_war_and_peace2.txt", "decompressed_war_and_peace.txt");
     decompress("compressed_war_and_peace2.txt", "decompressed_war_and_peace.txt");
 }
