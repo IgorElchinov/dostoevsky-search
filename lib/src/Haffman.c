@@ -7,7 +7,7 @@
 
 enum {
     BUFFER_SIZE = 32768,
-    MAX_FILE_SIZE = INT_MAX,
+    MAX_FILE_SIZE = 2000000,
     UNIQUE_SYMBOLS = 255
 };
 
@@ -141,9 +141,10 @@ char *
 compress(char *filename, char *compressed_filename, char *decompressed_file) {
     FILE *file = fopen(filename, "r");
     FILE *compressed_file = fopen(compressed_filename, "wb");
-    unsigned char k, min_code_length, max_code_length, same_lengths_count = 2;
+    unsigned char k, min_code_length, max_code_length, same_lengths_count = 2, flag = 0;
     uint64_t cur = 0;
     char c, iter = 0;
+    int sum = 0;
     Pair *symbol_count = calloc(UNIQUE_SYMBOLS + 1, sizeof(*symbol_count));
     HaffmanCode *unsorted_code_table = calloc(UNIQUE_SYMBOLS + 1, sizeof(*unsorted_code_table));
     char *compressed_str = calloc(MAX_FILE_SIZE, sizeof(*compressed_str));;
@@ -187,8 +188,6 @@ compress(char *filename, char *compressed_filename, char *decompressed_file) {
                 for (int k = min_code_length - 1; k >= 0; k--) {
                     compressed_str[cur / 8] |= ((sorted_code_table[i - j].code >> k) & 1u) << (cur % 8);
                     cur++;
-                    if (cur % 8 == 0) {
-                    }
                 }
             }
             min_code_length = sorted_code_table[i].code_length;
@@ -212,14 +211,26 @@ compress(char *filename, char *compressed_filename, char *decompressed_file) {
             }
         }
     }
+    for (int j = 0; j < 256; j++) {
+        compressed_str[j] = 0;
+    }
     fprintf(compressed_file, "%c", 255);
     cur = 0;
     while ((c = getc(file)) != EOF) {
         for (int i = unsorted_code_table[c].code_length - 1; i >= 0; i--) {
-            compressed_str[cur / 8] |= ((unsorted_code_table[c].code >> i) & 1u) << (cur % 8);
+            compressed_str[cur / 8] |= ((unsorted_code_table[c].code >> i) & 1u) << (7 - cur % 8);
             cur++;
-            if (cur % 2048 == 0) {
+            if (cur % 8 == 0 && compressed_str[cur / 8 - 1] == 0) {
                 fprintf(compressed_file, "%s", compressed_str);
+                fprintf(compressed_file, "%c", 0);
+                for (int j = 0; j < cur / 8; j++) {
+                    compressed_str[j] = 0;
+                }
+                sum += cur / 8;
+                cur = 0;
+            } else if (cur % 2048 == 0) {
+                fprintf(compressed_file, "%s", compressed_str);
+                sum += 256;
                 cur = 0;
                 for (int j = 0; j < 256; j++) {
                     compressed_str[j] = 0;
@@ -232,6 +243,7 @@ compress(char *filename, char *compressed_filename, char *decompressed_file) {
             compressed_str[cur / 8] |= 0 << (cur % 8);
             cur++;
         }
+        sum += cur / 8;
     }
     fprintf(compressed_file, "%s", compressed_str);
     fclose(file);
@@ -240,41 +252,6 @@ compress(char *filename, char *compressed_filename, char *decompressed_file) {
     free(symbol_count);
     free(sorted_code_table);
     free(unsorted_code_table);
-}
-
-char *
-int_to_str(int num) {
-    char *tmp = calloc(100, sizeof(*tmp));
-    tmp[0] = 's';
-    tmp[1] = 'o';
-    tmp[2] = 'n';
-    tmp[3] = 'n';
-    tmp[4] = 'e';
-    tmp[5] = 't';
-    tmp[6] = '_';
-    if (num >= 100) {
-        tmp[7] = '1';
-        tmp[8] = (char) (num / 10 % 10 + 48);
-        tmp[9] = (char) (num % 10 + 48);
-        tmp[10] = '.';
-        tmp[11] = 't';
-        tmp[12] = 'x';
-        tmp[13] = 't';
-    } else if (num >= 10) {
-        tmp[7] = (char) (num / 10 % 10 + 48);
-        tmp[8] = (char) (num % 10 + 48);
-        tmp[9] = '.';
-        tmp[10] = 't';
-        tmp[11] = 'x';
-        tmp[12] = 't';
-    } else {
-        tmp[7] = (char) (num % 10 + 48);
-        tmp[8] = '.';
-        tmp[9] = 't';
-        tmp[10] = 'x';
-        tmp[11] = 't';
-    }
-    return tmp;
 }
 
 char *
@@ -292,44 +269,78 @@ add(char *str1, char *str2) {
 void
 decompress(char *compressed_filename, char *decompressed_filename) {
     FILE *compressed_file = fopen("compressed_war_and_peace2.txt", "rb");
-    FILE *decompressed_file = fopen(decompressed_filename, "w");
-    HaffmanCode *haffman_code = calloc(UNIQUE_SYMBOLS + 1, sizeof(*haffman_code));
-    char *str = calloc(100, sizeof(*str)); 
-    uint8_t same_length_symbols_count = 0, cur = 0, code_length = 0, read_symbols, all_unique_symbols = 0;
-    uint8_t c;
-    int symbol;
+    FILE *decompressed_file = fopen(decompressed_filename, "wb");
+    fseek(compressed_file, 0, SEEK_END);
+    int size = ftell(compressed_file) - 1;
+    fseek(compressed_file, 0, SEEK_SET);
+    char *decompressed_str = calloc(MAX_FILE_SIZE, sizeof(*decompressed_str));
+    HaffmanCode *sorted_code_table = calloc(UNIQUE_SYMBOLS, sizeof(*sorted_code_table)); 
+    uint8_t c, same_length_symbols_count = 0, cur = 0, code_length = 0, unique_symbols = 0, read_symbols = 0;
+    uint32_t symbol_code = 0, symbols_to_write = 0, index = 0;
     while (1) {
         same_length_symbols_count = getc(compressed_file);
+        size--;
         if (same_length_symbols_count == 255) {
             break;
         }
         code_length = getc(compressed_file);
-        for (int i = all_unique_symbols; i < all_unique_symbols + same_length_symbols_count; i++) {
+        size--;
+        for (int i = unique_symbols; i < unique_symbols + same_length_symbols_count; i++) {
             c = getc(compressed_file);
-            haffman_code[i].symbol = c;
+            size--;
+            sorted_code_table[i].symbol = c;
         }
-        for (int i = all_unique_symbols; i < all_unique_symbols + same_length_symbols_count; i++) {
-            haffman_code[i].code_length = code_length;
+        for (int i = unique_symbols; i < unique_symbols + same_length_symbols_count; i++) {
+            sorted_code_table[i].code_length = code_length;
             for (char j = code_length - 1; j >= 0; j--) {
                 if (cur % 8 == 0) {
                     c = getc(compressed_file);
+                    size--;
                 }
-                haffman_code[i].code |= ((c >> (cur % 8)) & 1u) << (j % 32);
+                sorted_code_table[i].code |= ((c >> (cur % 8)) & 1u) << j;
                 cur++;
             }
             read_symbols++;
         }
+        unique_symbols += read_symbols;
         cur = 0;
-        all_unique_symbols += same_length_symbols_count;
         read_symbols = 0;
     }
-    for (int i = 0; i < all_unique_symbols; i++) {
-        cur = 0;
-        printf("\n%c %d %d ", haffman_code[i].symbol, haffman_code[i].code, haffman_code[i].code_length);
-        for (int j = haffman_code[i].code_length - 1; j >= 0; j--) {
-            printf("%d", (haffman_code[i].code >> j) & 1u);
+    cur = 0;
+    for (int i = 0; i < size; i++) {
+        c = getc(compressed_file);
+        for (int j = 7; j >= 0; j--) {
+            symbol_code *= 2;
+            symbol_code |= ((c >> j) & 1u) << 0;
             cur++;
-        } 
+            while (sorted_code_table[index].code_length == cur) {
+                if (symbol_code == sorted_code_table[index].code) {
+                    decompressed_str[symbols_to_write] = sorted_code_table[index].symbol;
+                    symbols_to_write++;
+                    cur = 0;
+                    symbol_code = 0;
+                    index = 0;
+                    break;
+                }
+                index++;
+            }
+        }
+        if (symbols_to_write >= 2048) {
+            fprintf(decompressed_file, "%s", decompressed_str);
+            for (int j = 2048; j <= symbols_to_write; j++) {
+                decompressed_str[j] = 0;
+            }
+            symbols_to_write = 0;
+        }
+    }
+    if (symbols_to_write != 0) {
+        for (int j = symbols_to_write; j <= 2048; j++) {
+            decompressed_str[j] = 0;
+        }
+    fprintf(decompressed_file, "%s", decompressed_str);
+    fclose(compressed_file);
+    fclose(decompressed_file);
+    free(decompressed_str);
     }
 }
 
