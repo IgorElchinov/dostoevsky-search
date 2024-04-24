@@ -3,6 +3,7 @@
 #include "trie.h"
 #include "unordered_set.h"
 #include "unordered_map.h"
+#include "Haffman.h"
 
 int compare(const void * x1, const void * x2) {
     int *tmp1 = (int*)x1, *tmp2 = (int*)x2;
