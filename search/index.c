@@ -38,7 +38,7 @@ main(int argc, char **argv) {
 
     Trie words_in_files = t_init();
     for (int i = 0; i < argc - 1; i++) { //присваивание файлам с большим размером меньший номер
-        fprintf(out, "%s %d\n", argv[name_size[i][1]], i);
+        fprintf(out, "%s\n", argv[name_size[i][1]]);
     }
 
     UnorderedSet dictionary;
