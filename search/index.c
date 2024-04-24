@@ -12,8 +12,7 @@ int compare(const void * x1, const void * x2) {
 
 void
 main(int argc, char **argv) {
-    FILE *out;
-    out = fopen("index.txt", "w");
+    FILE *out = fopen("index.txt", "w");
     fprintf(out, "%d\n", argc - 1);
 
     int **name_size = calloc(argc - 1, sizeof(*name_size)); //[размер][имя]
@@ -23,9 +22,8 @@ main(int argc, char **argv) {
     }
 
     for (int i = 1; i < argc; i++) {
-        FILE *cur_file;
-        cur_file = fopen(argv[i], "r"); //файл с названием argv[i]
-        
+        FILE *cur_file = fopen(argv[i], "r"); //файл с названием argv[i]
+
         int file_size = 0;
         while(getc(cur_file) != EOF) // количество элементов
             file_size++;
@@ -47,23 +45,33 @@ main(int argc, char **argv) {
     UnorderedSet dictionary;
     us_init(&dictionary);
     for (int i = 0; i < argc - 1; i++) {
-        FILE *cur_file;
-        cur_file = fopen(argv[name_size[i][1]], "r");
-
+        FILE *cur_file = fopen(argv[name_size[i][1]], "r");
         char *word;
-        while (fscanf(cur_file, "%s", word) == 1) { //добавление слов в бор и сет
+        while (fscanf(cur_file, "%s", &word) == 1) { //добавление слов в бор и сет
             t_push_back(&words_in_files, word, i);
             us_insert(&dictionary, word);
         }
-        
+
         fclose(cur_file);
     }
-
-    um_free(&dictionary);
+    for (int value = 0; value < MAX_HASH_TABLE_SIZE; value++) {
+        ListStr *cur = dictionary.arr[value];
+        while (cur->next != NULL) {
+            Vector *files = t_get_ptr(&words_in_files, cur->data);
+            fprintf(out, "%s %llu\n", cur->data, files->size);
+            for (int i = 0; i < files->size; i++) {
+                fprintf(out, "%d ", v_get(files, i));
+            }
+            fprintf(out, "\n");
+            cur = cur->next;
+            v_free(files);
+        }
+        ls_free(cur);
+    }
+    us_free(&dictionary);
     t_free(&words_in_files);
     free(name_size);
     free(tmp);
     fclose(out);
-    free(tmp);
     free(name_size);
 }
