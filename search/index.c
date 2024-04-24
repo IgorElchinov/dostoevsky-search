@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../lib/headers/trie.h"
-#include "../lib/headers/unordered_set.h"
-#include "../lib/headers/unordered_map.h"
+#include "trie.h"
+#include "unordered_set.h"
+#include "unordered_map.h"
 
 int compare(const void * x1, const void * x2) {
     int *tmp1 = (int*)x1, *tmp2 = (int*)x2;
