@@ -36,10 +36,8 @@ main(int argc, char **argv) {
     qsort(name_size, argc - 1, sizeof(*name_size), compare); //сортируем по убыванию размера
 
     Trie words_in_files = t_init();
-    // UnorderedMap mp;
     for (int i = 0; i < argc - 1; i++) { //присваивание файлам с большим размером меньший номер
         fprintf(out, "%s %d\n", argv[name_size[i][1]], i);
-       // um_insert(&mp, argv[name_size[i][1]], (char*)i);
     }
 
     UnorderedSet dictionary;
@@ -54,6 +52,7 @@ main(int argc, char **argv) {
 
         fclose(cur_file);
     }
+    
     for (int value = 0; value < MAX_HASH_TABLE_SIZE; value++) { //все добавленные в сет (хеш-таблицу) слова
         ListStr *cur = dictionary.arr[value];
         while (cur->next != NULL) {
@@ -63,11 +62,15 @@ main(int argc, char **argv) {
                 fprintf(out, "%d ", v_get(files, i)); //вывод номера файла
             }
             fprintf(out, "\n");
+            
             cur = cur->next;
+            
             v_free(files);
         }
+        
         ls_free(cur);
     }
+    
     us_free(&dictionary);
     t_free(&words_in_files);
     free(name_size);
