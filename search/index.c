@@ -15,7 +15,7 @@ main(int argc, char **argv) {
     FILE *out = fopen("index.txt", "w");
     fprintf(out, "%d\n", argc - 1);
 
-    int **name_size = calloc(argc - 1, sizeof(*name_size)); //[размер][имя]
+    int **name_size = calloc(argc - 1, sizeof(*name_size)); //[размер][индекс имениъ
     int *tmp = calloc((argc - 1) * 2, sizeof (*tmp));
     for (int i = 0; i < argc - 1; ++i) {
         name_size[i] = &tmp[i * 2];
@@ -54,13 +54,13 @@ main(int argc, char **argv) {
 
         fclose(cur_file);
     }
-    for (int value = 0; value < MAX_HASH_TABLE_SIZE; value++) {
+    for (int value = 0; value < MAX_HASH_TABLE_SIZE; value++) { //все добавленные в сет (хеш-таблицу) слова
         ListStr *cur = dictionary.arr[value];
         while (cur->next != NULL) {
             Vector *files = t_get_ptr(&words_in_files, cur->data);
-            fprintf(out, "%s %llu\n", cur->data, files->size);
+            fprintf(out, "%s %llu\n", cur->data, files->size); // вывод слова и количество файлов, в которых оно присутствует
             for (int i = 0; i < files->size; i++) {
-                fprintf(out, "%d ", v_get(files, i));
+                fprintf(out, "%d ", v_get(files, i)); //вывод номера файла
             }
             fprintf(out, "\n");
             cur = cur->next;
