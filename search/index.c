@@ -11,7 +11,7 @@ int compare(const void * x1, const void * x2) {
     return a > 0 || (a == 0 && b < 0);
 }
 
-void
+int
 main(int argc, char **argv) {
     FILE *out = fopen("index.txt", "w");
     fprintf(out, "%d\n", argc - 1);
@@ -78,4 +78,5 @@ main(int argc, char **argv) {
     free(tmp);
     fclose(out);
     free(name_size);
+    return 0;
 }
