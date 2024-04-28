@@ -6,3 +6,6 @@
 
 #ignore .out files:
 *.out
+
+#ignore .txt files:
+*.txt
