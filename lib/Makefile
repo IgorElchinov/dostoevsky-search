@@ -9,7 +9,10 @@ HEADDIR=./headers
 FLAGS= -Wall -iquote $(HEADDIR)
 ADD= 
 
-all: $(TARGET)
+all: make_dirs $(TARGET)
+
+make_dirs:
+	mkdir -p ./bin
 
 test_vector.out: test_vector.o libvector.so                         # final compilation for vector
 	$(CC) $< -L$(BINDIR) -o $@ -lvector $(ADD)
@@ -58,4 +61,4 @@ run: all                                                            # target to 
 	./runner $(TARGET)
 
 clean:                                                              # target to clean binary files
-	rm -f *.out *.o
+	rm -f *.out *.o $(BINDIR)/*.so

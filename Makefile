@@ -9,7 +9,10 @@ HEADDIR=./lib/headers
 FLAGS= -g -Wall -iquote $(HEADDIR)
 ADD= 
 
-all: lib index.out # search.out
+all: make_dirs lib index.out # search.out
+
+make_dirs:
+	mkdir -p lib/bin
 
 index.out:
 	gcc search/index.c -o index.out -L./lib/bin -lunordered_map -llist_of_map_nodes -lhash_table -llist_str -ltrie -lvector -lunordered_set $(FLAGS)
@@ -17,12 +20,12 @@ index.out:
 search.out:
 	gcc search/search.c -o search.out
 
-lib%.so: $(HEADDIR)/%.h                                   # make libraries dependant from their header files
+lib%.so: $(HEADDIR)/%.h                                                              # make libraries dependant from their header files
 
-libvector.so: $(SRCDIR)/vector.c                                    # compiling dynamic library for vector
+libvector.so: $(SRCDIR)/vector.c                                                     # compiling dynamic library for vector
 	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC -lvector
 
-libtrie.so: $(SRCDIR)/trie.c                                        # compiling dynamic library for trie
+libtrie.so: $(SRCDIR)/trie.c                                                         # compiling dynamic library for trie
 	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC -lvector -ltrie
 
 libunordered_set.so: $(SRCDIR)/unordered_set.c libhash_table.so
@@ -45,8 +48,8 @@ libmap_node.so: $(SRCDIR)/map_node.c
 
 lib: libvector.so libtrie.so liblist_str.so libhash_table.so libunordered_set.so libmap_node.so liblist_of_map_nodes.so libunordered_map.so 
 
-run: all                                                            # target to run code
+run: all                                                                             # target to run code
 	./runner $(TARGET)
 
-clean:                                                              # target to clean binary files
-	rm -f *.out *.o
+clean:                                                                               # target to clean binary files
+	rm -f *.out *.o $(BINDIR)/*.so
