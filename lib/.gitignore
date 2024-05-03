@@ -3,3 +3,6 @@
 
 #ignore .out files:
 *.out
+
+#ignore shared libraries:
+*.so

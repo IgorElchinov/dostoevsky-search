@@ -6,6 +6,6 @@ typedef struct MapNode {
     char *value;
 } MapNode;
 
-extern char * node_key(MapNode node);
-extern char * node_value(MapNode node);
+extern char *node_key(MapNode node);
+extern char *node_value(MapNode node);
 #endif

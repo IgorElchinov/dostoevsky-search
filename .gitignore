@@ -1,8 +1,15 @@
 #ignore .vscode file
 .vscode/
 
+#ignore strange files:
+*.dSYM
+.DS_Store
+
 #ignore .o and .a files:
 *.[oa]
 
 #ignore .out files:
 *.out
+
+#ignore .txt files:
+*.txt
