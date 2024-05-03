@@ -11,12 +11,12 @@ int compare(const void * x1, const void * x2) {
     return a > 0 || (a == 0 && b < 0);
 }
 
-int
+void
 main(int argc, char **argv) {
-    FILE *out = fopen("index.txt", "w");
+    FILE *out = fopen("cur_index.txt", "w");
     fprintf(out, "%d\n", argc - 1);
 
-    int **name_size = calloc(argc - 1, sizeof(*name_size)); //[размер][индекс имениъ
+    int **name_size = calloc(argc - 1, sizeof(*name_size)); //[размер][имя]
     int *tmp = calloc((argc - 1) * 2, sizeof (*tmp));
     for (int i = 0; i < argc - 1; ++i) {
         name_size[i] = &tmp[i * 2];
@@ -37,8 +37,10 @@ main(int argc, char **argv) {
     qsort(name_size, argc - 1, sizeof(*name_size), compare); //сортируем по убыванию размера
 
     Trie words_in_files = t_init();
+    // UnorderedMap mp;
     for (int i = 0; i < argc - 1; i++) { //присваивание файлам с большим размером меньший номер
-        fprintf(out, "%s\n", argv[name_size[i][1]]);
+        fprintf(out, "%s %d\n", argv[name_size[i][1]], i);
+       // um_insert(&mp, argv[name_size[i][1]], (char*)i);
     }
 
     UnorderedSet dictionary;
@@ -53,30 +55,24 @@ main(int argc, char **argv) {
 
         fclose(cur_file);
     }
-    
-    for (int value = 0; value < MAX_HASH_TABLE_SIZE; value++) { //все добавленные в сет (хеш-таблицу) слова
+    for (int value = 0; value < MAX_HASH_TABLE_SIZE; value++) {
         ListStr *cur = dictionary.arr[value];
-        while (cur != NULL && cur->next != NULL) {
+        while (cur != 0 && cur->next != NULL) {
             Vector *files = t_get_ptr(&words_in_files, cur->data);
-            fprintf(out, "%s %llu\n", cur->data, files->size); // вывод слова и количества файлов, в которых оно присутствует
+            fprintf(out, "%s %llu\n", cur->data, files->size);
             for (int i = 0; i < files->size; i++) {
-                fprintf(out, "%d ", v_get(files, i)); //вывод номеров файлов
+                fprintf(out, "%d ", v_get(files, i));
             }
             fprintf(out, "\n");
-            
             cur = cur->next;
-            
             v_free(files);
         }
-        
         ls_free(cur);
     }
-    
+    fclose(out);
+    compress("cur_index.txt", "index.txt", "decomp_index.txt");
     us_free(&dictionary);
     t_free(&words_in_files);
     free(name_size);
     free(tmp);
-    fclose(out);
-    free(name_size);
-    return 0;
 }
