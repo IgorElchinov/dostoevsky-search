@@ -1,5 +1,5 @@
 
-OBJ=trie
+OBJ=haffman
 TARGET=test_$(OBJ).out
 CC=gcc
 MAINDIR=./test
@@ -17,10 +17,16 @@ test_vector.out: test_vector.o libvector.so                         # final comp
 test_trie.out: test_trie.o libtrie.so libvector.so                  # final compilation for trie
 	$(CC) $< -L$(BINDIR) -o $@ -lvector -ltrie $(ADD)
 
+test_haffman.out: test_haffman.o libhaffman.so                      # final compilation for haffman
+	$(CC) $< -L$(BINDIR) -o $@ -lhaffman $(ADD)
+
 test_$(OBJ).o: $(MAINDIR)/test_$(OBJ).c                             # compiling example
 	$(CC) -c $< -o $@ $(FLAGS) $(ADD)
 
 $(OBJ).so: $(HEADDIR)/$(OBJ).h                                      # make libraries dependant from their header files
+
+libvector.so: $(SRCDIR)/haffman.c                                    # compiling dynamic library for haffman
+	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC
 
 libvector.so: $(SRCDIR)/vector.c                                    # compiling dynamic library for vector
 	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC
