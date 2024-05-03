@@ -56,7 +56,7 @@ main(int argc, char **argv) {
     
     for (int value = 0; value < MAX_HASH_TABLE_SIZE; value++) { //все добавленные в сет (хеш-таблицу) слова
         ListStr *cur = dictionary.arr[value];
-        while (cur->next != NULL) {
+        while (cur != NULL && cur->next != NULL) {
             Vector *files = t_get_ptr(&words_in_files, cur->data);
             fprintf(out, "%s %llu\n", cur->data, files->size); // вывод слова и количество файлов, в которых оно присутствует
             for (int i = 0; i < files->size; i++) {
