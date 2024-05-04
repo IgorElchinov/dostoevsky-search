@@ -34,7 +34,7 @@ test_$(OBJ).o: $(MAINDIR)/test_$(OBJ).c                             # compiling 
 
 $(OBJ).so: $(HEADDIR)/$(OBJ).h                                      # make libraries dependant from their header files
 
-libvector.so: $(SRCDIR)/haffman.c                                    # compiling dynamic library for haffman
+libhaffman.so: $(SRCDIR)/haffman.c                                    # compiling dynamic library for haffman
 	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC
 
 libvector.so: $(SRCDIR)/vector.c                                    # compiling dynamic library for vector

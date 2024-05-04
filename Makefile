@@ -15,7 +15,7 @@ make_dirs:
 	mkdir -p lib/bin
 
 index.out:
-	gcc search/index.c -o index.out -L./lib/bin -lunordered_map -llist_of_map_nodes -lhash_table -llist_str -ltrie -lvector -lunordered_set $(FLAGS)
+	gcc search/index.c -o index.out -L./lib/bin -lunordered_map -llist_of_map_nodes -lhash_table -llist_str -ltrie -lvector -lunordered_set -lhaffman $(FLAGS)
 
 search.out:
 	gcc search/search.c -o search.out
@@ -46,7 +46,10 @@ liblist_of_map_nodes.so: $(SRCDIR)/list_of_map_nodes.c libmap_node.so
 libmap_node.so: $(SRCDIR)/map_node.c
 	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC
 
-lib: libvector.so libtrie.so liblist_str.so libhash_table.so libunordered_set.so libmap_node.so liblist_of_map_nodes.so libunordered_map.so 
+libhaffman.so: $(SRCDIR)/haffman.c                                    # compiling dynamic library for haffman
+	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC
+
+lib: libvector.so libtrie.so liblist_str.so libhash_table.so libunordered_set.so libmap_node.so liblist_of_map_nodes.so libunordered_map.so libhaffman.so
 
 run: all                                                                             # target to run code
 	./runner $(TARGET)

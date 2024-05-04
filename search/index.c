@@ -3,7 +3,7 @@
 #include "trie.h"
 #include "unordered_set.h"
 #include "unordered_map.h"
-#include "Haffman.h"
+#include "haffman.h"
 
 int compare(const void * x1, const void * x2) {
     int *tmp1 = (int*)x1, *tmp2 = (int*)x2;
@@ -70,7 +70,7 @@ main(int argc, char **argv) {
         ls_free(cur);
     }
     fclose(out);
-    compress("cur_index.txt", "index.txt", "decomp_index.txt");
+    compress("cur_index.txt", "index.txt");
     us_free(&dictionary);
     t_free(&words_in_files);
     free(name_size);
