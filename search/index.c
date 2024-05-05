@@ -9,7 +9,6 @@ int
 compare(const void *x1, const void * x2) {
     const int *tmp1 = x1, *tmp2 = x2;
     const int a = tmp1[0] - tmp2[0], b = tmp1[1] - tmp2[1];
-    printf("%d %d  %d %d  %d %d\n", tmp1[0], tmp1[1], tmp2[0], tmp2[1], a, b);
     if (a > 0 || (a == 0 && b < 0)) {
         return -1;
     } else if (a == 0 && b == 0) {
@@ -26,7 +25,7 @@ main(int argc, char **argv) {
 
     int **name_size = calloc(argc - 1, sizeof(*name_size)); //[размер][имя]
     int *tmp = calloc((argc - 1) * 2, sizeof (*tmp));
-    for (int i = 1; i < argc - 1; ++i) {
+    for (int i = 0; i < argc - 1; ++i) {
         name_size[i] = &tmp[i * 2];
     }
 
@@ -34,7 +33,8 @@ main(int argc, char **argv) {
         FILE *cur_file = fopen(argv[i], "r"); //файл с названием argv[i]
 
         int file_size = 0;
-        while(getc(cur_file) != EOF) // количество элементов
+        char c;
+        while ((c = getc(cur_file)) != EOF)// количество элементов
             file_size++;
         fclose(cur_file);
 
@@ -44,23 +44,20 @@ main(int argc, char **argv) {
 
     qsort(*name_size, argc - 1, sizeof(*name_size), compare); //сортируем по убыванию размера
 
-    Trie words_in_files = t_init();
-    // UnorderedMap mp;
     for (int i = 0; i < argc - 1; i++) { //присваивание файлам с большим размером меньший номер
         fprintf(out, "%s %d\n", argv[name_size[i][1]], i);
-       // um_insert(&mp, argv[name_size[i][1]], (char*)i);
     }
 
+    Trie words_in_files;
     UnorderedSet dictionary;
     us_init(&dictionary);
     for (int i = 0; i < argc - 1; i++) {
         FILE *cur_file = fopen(argv[name_size[i][1]], "r");
-        char *word;
-        while (fscanf(cur_file, "%s", &word) == 1) { //добавление слов в бор и сет
+        char word[100];
+        while (fscanf(cur_file, "%s", word) == 1) { //добавление слов в бор и сет
             t_push_back(&words_in_files, word, i);
             us_insert(&dictionary, word);
         }
-
         fclose(cur_file);
     }
     for (int value = 0; value < MAX_HASH_TABLE_SIZE; value++) {
