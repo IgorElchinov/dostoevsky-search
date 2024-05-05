@@ -18,7 +18,8 @@ compare(const void *x1, const void * x2) {
     }
 }
 
-int getFileSize(const char* file_name) {
+int
+getFileSize(const char* file_name) {
     int _file_size = 0;
     FILE* fd = fopen(file_name, "rb");
     if (fd == NULL){
@@ -70,7 +71,7 @@ main(int argc, char **argv) {
         ListStr *cur = dictionary.arr[value];
         while (cur != 0 && cur->next != NULL) {
             Vector *files = t_get_ptr(&words_in_files, cur->data);
-            fprintf(out, "%s %llu\n", cur->data, files->size);
+            fprintf(out, "%s %zu\n", cur->data, files->size);
             for (int i = 0; i < files->size; i++) {
                 fprintf(out, "%d ", v_get(files, i));
             }
