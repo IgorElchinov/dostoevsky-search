@@ -1,12 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "hash_table.h"
 #include "haffman.h"
 #include "trie.h"
 #include "vector.h"
-#include "unordered_map.h"
-#include "unordered_set.h"
 
 enum {
     MAX_LEN_NAME = 105,
