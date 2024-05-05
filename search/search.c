@@ -1,12 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "hash_table.h"
-#include "Haffman.h"
+#include "haffman.h"
 #include "trie.h"
 #include "vector.h"
-#include "unordered_map.h"
-#include "unordered_set.h"
 
 enum {
     MAX_LEN_NAME = 105,
@@ -76,7 +73,7 @@ main(int argc, char **argv) {
         fgets(request, MAX_LEN_REQUEST - 1, stdin);
         size_t n = strlen(request) - 1;
         int index = 0;
-        char *wordnow = calloc(MAX_LEN_WORD, sizeof(*word));
+        char *wordnow = calloc(MAX_LEN_WORD, sizeof(*wordnow));
         int lenwordnow = 0;
         int wordcount = 0;
         while (index != n) {
@@ -87,7 +84,7 @@ main(int argc, char **argv) {
                     word[i] = wordnow[i];
                 }
                 // 6. Для каждого слова в запросе идём в бор и смотрим, в каких доках оно встречается
-                Vector docs = t_get(&dictionary, &word);
+                Vector docs = t_get(&dictionary, word);
                 for (int i = 0; i < docs.size; ++i) {
                     ++alldocs[v_get(&docs, i)];
                 }
@@ -95,7 +92,7 @@ main(int argc, char **argv) {
                 free(word);
             } else {
                 wordnow[lenwordnow] = request[index];
-                ++lenword;
+                ++lenwordnow;
             }
             ++index;
         }
