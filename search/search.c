@@ -84,7 +84,7 @@ main(int argc, char **argv) {
                     word[i] = wordnow[i];
                 }
                 // 6. Для каждого слова в запросе идём в бор и смотрим, в каких доках оно встречается
-                Vector docs = t_get(&dictionary, &word);
+                Vector docs = t_get(&dictionary, word);
                 for (int i = 0; i < docs.size; ++i) {
                     ++alldocs[v_get(&docs, i)];
                 }
