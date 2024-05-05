@@ -9,15 +9,15 @@ HEADDIR=./lib/headers
 FLAGS= -g -Wall -iquote $(HEADDIR)
 ADD= 
 
-all: make_dirs lib search.out #index.out search.out
+all: make_dirs lib index.out search.out
 
 make_dirs:
 	mkdir -p lib/bin -lhaffman -lvector -ltrie
 
-index.out:
+index.out: libunordered_map.so libhash_table.so libunordered_set.so libhaffman.so
 	gcc search/index.c -o index.out -L$(BINDIR) -lunordered_map -llist_of_map_nodes -lhash_table -llist_str -ltrie -lvector -lunordered_set -lhaffman $(FLAGS)
 
-search.out:
+search.out: libhaffman.so libtrie.so libvector.so
 	gcc search/search.c -o search.out -L$(BINDIR) -lhaffman -ltrie -lvector $(FLAGS)
 
 lib%.so: $(HEADDIR)/%.h                                                              # make libraries dependant from their header files
