@@ -15,10 +15,10 @@ int
 main(int argc, char **argv) {  
     // 1. ^ Берём файл с индексом -> его название - argv[1]
     // 2. Разжимаем его
-    decompress(argv[1], "index.txt");
+    decompress(argv[1], "index_dec.txt");
 
     // 3. Проходимся по разжатому файлу, создаём книгу (массив) с именами файлов
-    FILE *in = fopen("index.txt", "r");
+    FILE *in = fopen("index_dec.txt", "r");
     int number_of_files;
     fscanf(in, "%d", &number_of_files);
     char **book = calloc(number_of_files, sizeof(*book));
