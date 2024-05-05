@@ -5,20 +5,28 @@
 #include "unordered_map.h"
 #include "haffman.h"
 
-int compare(const void * x1, const void * x2) {
-    int *tmp1 = (int*)x1, *tmp2 = (int*)x2;
-    int a = tmp1[0] - tmp2[0], b = tmp1[1] - tmp2[1];
-    return a > 0 || (a == 0 && b < 0);
+int
+compare(const void *x1, const void * x2) {
+    const int *tmp1 = x1, *tmp2 = x2;
+    const int a = tmp1[0] - tmp2[0], b = tmp1[1] - tmp2[1];
+    printf("%d %d  %d %d  %d %d\n", tmp1[0], tmp1[1], tmp2[0], tmp2[1], a, b);
+    if (a > 0 || (a == 0 && b < 0)) {
+        return -1;
+    } else if (a == 0 && b == 0) {
+        return 0;
+    } else {
+        return 1;
+    }
 }
 
-void
+int
 main(int argc, char **argv) {
     FILE *out = fopen("cur_index.txt", "w");
     fprintf(out, "%d\n", argc - 1);
 
     int **name_size = calloc(argc - 1, sizeof(*name_size)); //[размер][имя]
     int *tmp = calloc((argc - 1) * 2, sizeof (*tmp));
-    for (int i = 0; i < argc - 1; ++i) {
+    for (int i = 1; i < argc - 1; ++i) {
         name_size[i] = &tmp[i * 2];
     }
 
@@ -34,7 +42,7 @@ main(int argc, char **argv) {
         name_size[i - 1][0] = file_size;
     }
 
-    qsort(name_size, argc - 1, sizeof(*name_size), compare); //сортируем по убыванию размера
+    qsort(*name_size, argc - 1, sizeof(*name_size), compare); //сортируем по убыванию размера
 
     Trie words_in_files = t_init();
     // UnorderedMap mp;
