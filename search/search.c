@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "hash_table.h"
-#include "Haffman.h"
+#include "haffman.h"
 #include "trie.h"
 #include "vector.h"
 #include "unordered_map.h"
