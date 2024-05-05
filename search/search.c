@@ -47,7 +47,7 @@ main(int argc, char **argv) {
     Trie dictionary = t_init();
     for (int i = 0; i < number_of_words; ++i) {
         char *word = calloc(MAX_LEN_WORD, sizeof(*word));
-        fscanf(in, "%s", &word);
+        fscanf(in, "%s", word);
         int number_of_relevant_files;
         fscanf(in, "%d", &number_of_relevant_files);
         for (int j = 0; j < number_of_relevant_files; ++j) {
