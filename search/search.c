@@ -92,7 +92,7 @@ main(int argc, char **argv) {
                 free(word);
             } else {
                 wordnow[lenwordnow] = request[index];
-                ++lenword;
+                ++lenwordnow;
             }
             ++index;
         }
