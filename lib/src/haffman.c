@@ -81,7 +81,7 @@ build_haffman_table(HaffmanNode *node, unsigned int code, char iteration, Haffma
 
 HaffmanCode *
 build_haffman_code(unsigned char start, HaffmanNode *arr) {
-    int new, sum, i = 0;
+    int sum = 0, i = 0;
     HaffmanNode new_node, swap_node;
     HaffmanCode *code_table = calloc(UNIQUE_SYMBOLS + 1, sizeof(*code_table));
     HaffmanCode filler;
@@ -130,9 +130,9 @@ void
 compress(char *filename, char *compressed_filename) {
     FILE *file = fopen(filename, "r");
     FILE *compressed_file = fopen(compressed_filename, "wb");
-    unsigned char k, min_code_length, max_code_length, same_lengths_count = 2, flag = 0;
+    unsigned char min_code_length, same_lengths_count = 2;
     uint64_t cur = 0;
-    char c, iter = 0;
+    int c;
     HaffmanNode *symbol_count = calloc(UNIQUE_SYMBOLS + 1, sizeof(*symbol_count));
     HaffmanCode *unsorted_code_table = calloc(UNIQUE_SYMBOLS + 1, sizeof(*unsorted_code_table));
     char *compressed_str = calloc(SYMBOLS_TO_WRITE + BITS_IN_BYTE, sizeof(*compressed_str));;
@@ -248,8 +248,8 @@ decompress(char *compressed_filename, char *decompressed_filename) {
     fseek(compressed_file, 0, SEEK_SET);
     char *decompressed_str = calloc(BITS_IN_BYTE + SYMBOLS_TO_WRITE, sizeof(*decompressed_str));
     HaffmanCode *sorted_code_table = calloc(UNIQUE_SYMBOLS, sizeof(*sorted_code_table)); 
-    uint8_t c, same_length_symbols_count = 0, cur = 0, code_length = 0, unique_symbols = 0, read_symbols = 0;
-    uint32_t symbol_code = 0, symbols_to_write = 0, index = 0;
+    uint8_t same_length_symbols_count = 0, cur = 0, code_length = 0, unique_symbols = 0, read_symbols = 0;
+    uint32_t c, symbol_code = 0, symbols_to_write = 0, index = 0;
     while (1) {
         same_length_symbols_count = getc(compressed_file);
         size--;
