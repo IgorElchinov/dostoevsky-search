@@ -73,7 +73,7 @@ main(int argc, char **argv) {
         fgets(request, MAX_LEN_REQUEST - 1, stdin);
         size_t n = strlen(request) - 1;
         int index = 0;
-        char *wordnow = calloc(MAX_LEN_WORD, sizeof(*word));
+        char *wordnow = calloc(MAX_LEN_WORD, sizeof(*wordnow));
         int lenwordnow = 0;
         int wordcount = 0;
         while (index != n) {
