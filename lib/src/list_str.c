@@ -25,6 +25,9 @@ ls_init(char *val) {
 
 void
 ls_free(ListStr *list) {
+    if (list == NULL) {
+        return;
+    }
     while (list != NULL) {
         ListStr *next = list->next;
         if (list->data != NULL) {
