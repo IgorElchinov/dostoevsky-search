@@ -18,6 +18,19 @@ compare(const void *x1, const void * x2) {
     }
 }
 
+int getFileSize(const char* file_name) {
+    int _file_size = 0;
+    FILE* fd = fopen(file_name, "rb");
+    if (fd == NULL){
+        _file_size = -1;
+    } else{
+        while(getc(fd) != EOF)
+            _file_size++;
+        fclose(fd);
+    }
+    return _file_size;
+}
+
 int
 main(int argc, char **argv) {
     FILE *out = fopen("cur_index.txt", "w");
@@ -30,14 +43,7 @@ main(int argc, char **argv) {
     }
 
     for (int i = 1; i < argc; i++) {
-        FILE *cur_file = fopen(argv[i], "r"); //файл с названием argv[i]
-
-        int file_size = 0;
-        char c;
-        while ((c = getc(cur_file)) != EOF)// количество элементов
-            file_size++;
-        fclose(cur_file);
-
+        int file_size = getFileSize(argv[i]);
         name_size[i - 1][1] = i;
         name_size[i - 1][0] = file_size;
     }
@@ -45,7 +51,7 @@ main(int argc, char **argv) {
     qsort(*name_size, argc - 1, sizeof(*name_size), compare); //сортируем по убыванию размера
 
     for (int i = 0; i < argc - 1; i++) { //присваивание файлам с большим размером меньший номер
-        fprintf(out, "%s %d\n", argv[name_size[i][1]], i);
+        fprintf(out, "%s\n", argv[name_size[i][1]]);
     }
 
     Trie words_in_files;
