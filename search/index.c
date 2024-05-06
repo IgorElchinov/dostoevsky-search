@@ -97,7 +97,6 @@ main(int argc, char **argv) {
             cur = cur->next;
             v_free(files);
         }
-        ls_free(cur);
     }
 
     fclose(out);

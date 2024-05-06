@@ -157,6 +157,11 @@ t_push_back(Trie *trie, char *word, int doc) {
         t_add(trie, word, v_init(0));
         v = t_get_ptr(trie, word);
     }
+    for (int i = 0; i < v->size; ++i) {
+        if (v_get(v, i) == doc) {
+            return;
+        }
+    }
     v_push_back(v, doc);
     return;
 }

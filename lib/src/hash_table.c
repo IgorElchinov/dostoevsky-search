@@ -31,7 +31,7 @@ uint16_t
 murmur3_16(char *key) {
     size_t len = strlen(key);
     uint16_t h = SEED;
-    printf("SEED: %d", SEED);
+    //printf("SEED: %d", SEED);
     uint16_t k;
     for (size_t i = len >> 1; i; i--) {
         memcpy(&k, key, sizeof(k));
