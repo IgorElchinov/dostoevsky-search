@@ -157,7 +157,7 @@ t_push_back(Trie *trie, char *word, int doc) {
         t_add(trie, word, v_init(0));
         v = t_get_ptr(trie, word);
     }
-    if (v->size > 0 && v_get(v, v->size - 1) != doc) {
+    if (v->size > 0 && v_get(v, v->size - 1) == doc) {
         return;
     }
     v_push_back(v, doc);
