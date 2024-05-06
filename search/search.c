@@ -106,6 +106,7 @@ main(int argc, char **argv) {
                 int j = 0;
                 while (book[i][j] != '\n') {
                     printf("%c", book[i][j]);
+                    ++j;
                 }
                 printf("\n");
             }
