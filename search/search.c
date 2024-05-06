@@ -21,6 +21,7 @@ main(int argc, char **argv) {
     FILE *in = fopen("index_dec.txt", "r");
     int number_of_files;
     fscanf(in, "%d", &number_of_files);
+    char cur = fgetc(in);
     char **book = calloc(number_of_files, sizeof(*book));
     book[0] = calloc(number_of_files * MAX_LEN_NAME, sizeof(**book));
     for (int i = 1; i < number_of_files; ++i) {
