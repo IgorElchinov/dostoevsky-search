@@ -21,6 +21,7 @@ main(int argc, char **argv) {
     FILE *in = fopen("index_dec.txt", "r");
     int number_of_files;
     fscanf(in, "%d", &number_of_files);
+    char cur = fgetc(in);
     char **book = calloc(number_of_files, sizeof(*book));
     book[0] = calloc(number_of_files * MAX_LEN_NAME, sizeof(**book));
     for (int i = 1; i < number_of_files; ++i) {
@@ -63,21 +64,20 @@ main(int argc, char **argv) {
     int n;
     scanf("%d", &n);
 
-    int *alldocs = calloc(number_of_files, sizeof(*alldocs));
-    for (int i = 0 ; i < number_of_files; ++i) {
-        alldocs[i] = 0;
-    }
-
     for (int o = 0; o < n; ++o) {
+        int *alldocs = calloc(number_of_files, sizeof(*alldocs));
+        for (int i = 0 ; i < number_of_files; ++i) {
+            alldocs[i] = 0;
+        }
         char *request = calloc(MAX_LEN_REQUEST, sizeof(*request));
         fgets(request, MAX_LEN_REQUEST - 1, stdin);
-        size_t n = strlen(request) - 1;
+        size_t n = strlen(request);
         int index = 0;
         char *wordnow = calloc(MAX_LEN_WORD, sizeof(*wordnow));
         int lenwordnow = 0;
         int wordcount = 0;
         while (index != n) {
-            if (request[index] == ' ') {
+            if (request[index] == ' ' || request[index] == '\n') {
                 ++wordcount;
                 char *word = calloc(lenwordnow, sizeof(*word));
                 for (int i = 0; i < lenwordnow; ++i) {
@@ -96,19 +96,25 @@ main(int argc, char **argv) {
             }
             ++index;
         }
-        ++wordcount;
         free(wordnow);
+        int flag = 0;
         // 7. Находим пересечение
         for (int i = 0; i < number_of_files; ++i) {
             if (alldocs[i] == wordcount) {
+                flag = 1;
                 // 8. Выводим ответ на экран
                 int j = 0;
                 while (book[i][j] != '\n') {
                     printf("%c", book[i][j]);
+                    ++j;
                 }
                 printf("\n");
             }
         }
+        if (flag == 0) {
+            printf("No suitable files were found.\n");
+        }
+        free(alldocs);
     }
 
     // 9. Побочная ересь
