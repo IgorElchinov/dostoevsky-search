@@ -139,13 +139,15 @@ main(int argc, char **argv) {
     //поиск по сету (хэш-таблице), вывод слов и файлов, в которых они содержается
     for (int value = 0; value < MAX_HASH_TABLE_SIZE; value++) {
         ListStr *cur = dictionary.arr[value];
-        while (cur != 0 && cur->next != NULL) {
+        while (cur != NULL) {
             Vector *files = t_get_ptr(&words_in_files, cur->data);
-            fprintf(out, "%s %zu\n", cur->data, files->size);
-            for (int i = 0; i < files->size; i++) {
-                fprintf(out, "%d ", v_get(files, i));
+            if (files->size != 0) {
+                fprintf(out, "%s %zu\n", cur->data, files->size);
+                for (int i = 0; i < files->size; i++) {
+                    fprintf(out, "%d ", v_get(files, i));
+                }
+                fprintf(out, "\n");
             }
-            fprintf(out, "\n");
             cur = cur->next;
             v_free(files);
         }
