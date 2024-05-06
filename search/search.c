@@ -63,12 +63,11 @@ main(int argc, char **argv) {
     int n;
     scanf("%d", &n);
 
-    int *alldocs = calloc(number_of_files, sizeof(*alldocs));
-    for (int i = 0 ; i < number_of_files; ++i) {
-        alldocs[i] = 0;
-    }
-
     for (int o = 0; o < n; ++o) {
+        int *alldocs = calloc(number_of_files, sizeof(*alldocs));
+        for (int i = 0 ; i < number_of_files; ++i) {
+            alldocs[i] = 0;
+        }
         char *request = calloc(MAX_LEN_REQUEST, sizeof(*request));
         fgets(request, MAX_LEN_REQUEST - 1, stdin);
         size_t n = strlen(request) - 1;
@@ -77,7 +76,7 @@ main(int argc, char **argv) {
         int lenwordnow = 0;
         int wordcount = 0;
         while (index != n) {
-            if (request[index] == ' ') {
+            if (request[index] == ' ' || request[index] == '\n') {
                 ++wordcount;
                 char *word = calloc(lenwordnow, sizeof(*word));
                 for (int i = 0; i < lenwordnow; ++i) {
@@ -98,9 +97,11 @@ main(int argc, char **argv) {
         }
         ++wordcount;
         free(wordnow);
+        int flag = 0;
         // 7. Находим пересечение
         for (int i = 0; i < number_of_files; ++i) {
             if (alldocs[i] == wordcount) {
+                flag = 1;
                 // 8. Выводим ответ на экран
                 int j = 0;
                 while (book[i][j] != '\n') {
@@ -109,6 +110,10 @@ main(int argc, char **argv) {
                 printf("\n");
             }
         }
+        if (flag == 0) {
+            printf("No suitable files were found.\n");
+        }
+        free(alldocs);
     }
 
     // 9. Побочная ересь
