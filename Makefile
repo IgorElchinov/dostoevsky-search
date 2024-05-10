@@ -12,7 +12,7 @@ ADD=
 all: make_dirs lib index.out search.out
 
 make_dirs:
-	mkdir -p lib/bin -lhaffman -lvector -ltrie
+	mkdir -p lib/bin
 
 index.out: libunordered_map.so libhash_table.so libunordered_set.so libhaffman.so
 	gcc search/index.c -o index.out -L$(BINDIR) -lunordered_map -llist_of_map_nodes -lhash_table -llist_str -ltrie -lvector -lunordered_set -lhaffman $(FLAGS)
