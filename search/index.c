@@ -102,7 +102,7 @@ main(int argc, char **argv) {
         fprintf(out, "%s\n", argv[name_size[i][1]]);
     }
 
-    Trie words_in_files;
+    Trie words_in_files = t_init();
     UnorderedSet dictionary;
     us_init(&dictionary);
 
@@ -137,6 +137,7 @@ main(int argc, char **argv) {
     }
 
     //поиск по сету (хэш-таблице), вывод слов и файлов, в которых они содержается
+    fprintf(out, "%zu\n", t_num_of_words(&words_in_files));
     for (int value = 0; value < MAX_HASH_TABLE_SIZE; value++) {
         ListStr *cur = dictionary.arr[value];
         while (cur != NULL) {
