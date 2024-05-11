@@ -16,6 +16,7 @@ typedef struct TrieNode {
 typedef struct Trie
 {
     TrieNode *root;
+    size_t num_of_words;
 } Trie;
 
 // the set of valid characters can be changed in trie.c
@@ -27,5 +28,6 @@ extern void t_add(Trie *trie, char *word, Vector docs);      // assigns whole ve
 extern void t_push_back(Trie *trie, char *word, int doc);    // adds one document to the vector assigned for word
 extern Vector t_get(Trie *trie, char *word);                 // returns a copy if a vector or empty vector if the word isn't found
 extern Vector *t_get_ptr(Trie *trie, char *word);            // returns a pointer to the vector or NULL if the word isn't found
+extern size_t t_num_of_words(Trie *trie);                    // returns number of different words if trie
 
 #endif
