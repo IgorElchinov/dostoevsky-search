@@ -63,7 +63,7 @@ main(int argc, char **argv) {
     // 5. Считываем кол-во запросов и по-отдельности каждый запрос
     int n;
     scanf("%d", &n);
-    cur = fgetc(in);
+    cur = fgetc(stdin);
     for (int o = 0; o < n; ++o) {
         int *alldocs = calloc(number_of_files, sizeof(*alldocs));
         for (int i = 0 ; i < number_of_files; ++i) {
