@@ -11,6 +11,8 @@ typedef struct Vector {
     size_t capacity;
 } Vector;
 
+
+
 Vector
 v_init(size_t size) {
     Vector vector;
@@ -159,7 +161,7 @@ typedef struct Trie
     TrieNode *root;
 } Trie;
 
-const static char *__valid_chars = "`,',-,a-z,A-Z,0-9";             // can be changed
+const static char *__valid_chars = "`,',-,a-z,A-Z,0-9,А-Я,а-я";             // can be changed
 
 int 
 char_to_ind(char c) {
@@ -199,6 +201,40 @@ char_to_ind(char c) {
     fflush(stderr);
     exit(1);
     return -1;
+}
+
+void
+print_trie_node(TrieNode *t) {
+    printf("\nTrie node %p\n", t);
+    printf("is terminal: %d\n", t->is_terminal);
+    printf("data: ");
+    if (t->is_terminal) {
+        //v_print(v);
+        v_print(&t->data);
+    } else {
+        printf("no data\n");
+    }
+    printf("Next:\n");
+    for (int i = 0; i < MAX_NEXT_NUM; ++i) {
+        if (t->next[i] != 0) {
+            printf("%d %p\n", i, t->next[i]);
+        }
+    }
+    for (int i = 0; i < MAX_NEXT_NUM; ++i) {
+        if (t->next[i] != NULL) {
+            //v_push_back(v, i);
+            print_trie_node(t->next[i]);
+            //v_erase(v, v->size);
+        }
+    }
+}
+
+void
+print_trie(Trie t) {
+    printf("Printing trie...\n");
+    //Vector v = v_init(0);
+    print_trie_node(t.root);
+    printf("End\n");
 }
 
 static TrieNode *
@@ -334,18 +370,18 @@ main(void) {  //int argc, char **argv
     //decompress(argv[1], "index_dec.txt");
 
     // 3. Проходимся по разжатому файлу, создаём книгу (массив) с именами файлов
+    
     FILE *in = fopen("index_dec.txt", "r");
     int number_of_files;
     char cur;
     fscanf(in, "%d", &number_of_files);
     cur = fgetc(in);
-    //printf("%d\n", number_of_files); // check
+    printf("%d\n", number_of_files); // check
     char **book = calloc(number_of_files, sizeof(*book));
     book[0] = calloc(number_of_files * MAX_LEN_NAME, sizeof(**book));
     for (int i = 1; i < number_of_files; ++i) {
         book[i] = book[i - 1] + MAX_LEN_NAME;
     }
-    
     for (int i = 0; i < number_of_files; ++i) {
         for (int j = 0; j < MAX_LEN_NAME; ++j) {
             book[i][j] = '\n';
@@ -359,24 +395,23 @@ main(void) {  //int argc, char **argv
             ++lenname;
         }
     }
-    /*check.begin
-    for (int i = 0; i < number_of_files; ++i) {
-        for (int j = 0; j < MAX_LEN_NAME; ++j) {
-            if (book[i][j] == '\n') {
-                break;
-            }
-            printf("%c", book[i][j]);
-        }
-        printf("\n");
-    }
-    */
+    //check.begin
+    // for (int i = 0; i < number_of_files; ++i) {
+    //     for (int j = 0; j < MAX_LEN_NAME; ++j) {
+    //         if (book[i][j] == '\n') {
+    //             break;
+    //         }
+    //         printf("%c", book[i][j]);
+    //     }
+    //     printf("\n");
+    // }
 
     // 4. Создаём словарь, добавляя слова в бор и номера доков, в которых они встречаются
     int number_of_words;
     fscanf(in, "%d", &number_of_words);
+    char *word = calloc(MAX_LEN_WORD, sizeof(*word));
     Trie dictionary = t_init();
     for (int i = 0; i < number_of_words; ++i) {
-        char *word = calloc(MAX_LEN_WORD, sizeof(*word));
         fscanf(in, "%s", word);
         int number_of_relevant_files;
         fscanf(in, "%d", &number_of_relevant_files);
@@ -385,40 +420,47 @@ main(void) {  //int argc, char **argv
             fscanf(in, "%d", &doc);
             t_push_back(&dictionary, word, doc);
         }
-        free(word);
+        for (int j = 0; j < MAX_LEN_WORD; j++) {
+            word[i] = 0;
+        }
     }
     fclose(in);
-
     // 5. Считываем кол-во запросов и по-отдельности каждый запрос
     int n;
     scanf("%d", &n);
     cur = getc(stdin);
+    char *request = calloc(MAX_LEN_REQUEST, sizeof(*request));
+    char *wordnow = calloc(MAX_LEN_WORD, sizeof(*wordnow));
+    int *alldocs = calloc(number_of_files, sizeof(*alldocs));
     for (int o = 0; o < n; ++o) {
-        int *alldocs = calloc(number_of_files, sizeof(*alldocs));
         for (int i = 0 ; i < number_of_files; ++i) {
-            alldocs[i] = 0;
+//            alldocs[i] = 0;
         }
-        char *request = calloc(MAX_LEN_REQUEST, sizeof(*request));
+        for (int i = 0 ; i < MAX_LEN_REQUEST; ++i) {
+            request[i] = 0;
+        }
+        for (int i = 0 ; i < MAX_LEN_WORD; ++i) {
+            wordnow[i] = 0;
+        }
         fgets(request, MAX_LEN_REQUEST - 1, stdin);
         size_t n = strlen(request);
         int index = 0;
-        char *wordnow = calloc(MAX_LEN_WORD, sizeof(*wordnow));
         int lenwordnow = 0;
         int wordcount = 0;
         while (index != n) {
             if (request[index] == ' ' || request[index] == '\n') {
                 ++wordcount;
-                char *word = calloc(lenwordnow, sizeof(*word));
                 for (int i = 0; i < lenwordnow; ++i) {
                     word[i] = wordnow[i];
                 }
+                word[lenwordnow] = 0;
                 // 6. Для каждого слова в запросе идём в бор и смотрим, в каких доках оно встречается
                 Vector docs = t_get(&dictionary, word);
                 for (int i = 0; i < docs.size; ++i) {
                     ++alldocs[v_get(&docs, i)];
                 }
                 lenwordnow = 0;
-                free(word);
+                v_free(&docs);
                 //printf("%c %d ", request[index], request[index]);
             } else {
                 wordnow[lenwordnow] = request[index];
@@ -427,9 +469,7 @@ main(void) {  //int argc, char **argv
             }
             // printf("%c %d ", request[index], request[index]);
             ++index;
-            
         }
-        free(wordnow);
         // 7. Находим пересечение
         int flag = 0;
         for (int i = 0; i < number_of_files; ++i) {
@@ -447,12 +487,14 @@ main(void) {  //int argc, char **argv
         if (flag == 0) {
             printf("No suitable files were found.\n");
         }
-        free(alldocs);
     }
-
     // 9. Побочная ересь
     t_free(&dictionary);
     free(*book);
     free(book);
+    free(alldocs);
+    free(request);
+    free(wordnow);
+    free(word);
     return 0;
 }
