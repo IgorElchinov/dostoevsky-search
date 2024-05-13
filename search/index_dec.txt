@@ -1,0 +1,31 @@
+18
+file0.txt
+file1.txt
+file2.txt
+file3.txt
+file4.txt
+file5.txt
+file6.txt
+file7.txt
+file8.txt
+file9.txt
+file10.txt
+file11.txt
+file12.txt
+file13.txt
+file14.txt
+file15.txt
+file16.txt
+file17.txt
+
+5
+apple 7
+0 1 4 5 6 9 11
+pen 1
+4
+pig 3
+0 1 2
+flower 18
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17
+tea 7
+0 1 2 7 12 13 17
