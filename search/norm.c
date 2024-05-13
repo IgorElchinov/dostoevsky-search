@@ -370,7 +370,6 @@ main(void) {  //int argc, char **argv
     //decompress(argv[1], "index_dec.txt");
 
     // 3. Проходимся по разжатому файлу, создаём книгу (массив) с именами файлов
-    
     FILE *in = fopen("index_dec.txt", "r");
     int number_of_files;
     char cur;
@@ -388,13 +387,13 @@ main(void) {  //int argc, char **argv
         }
     }
     for (int i = 0; i < number_of_files; ++i) {
-        char cur;
         int lenname = 0;
         while((cur = fgetc(in)) != '\n') {
             book[i][lenname] = cur;
             ++lenname;
         }
     }
+
     //check.begin
     // for (int i = 0; i < number_of_files; ++i) {
     //     for (int j = 0; j < MAX_LEN_NAME; ++j) {
@@ -434,7 +433,7 @@ main(void) {  //int argc, char **argv
     int *alldocs = calloc(number_of_files, sizeof(*alldocs));
     for (int o = 0; o < n; ++o) {
         for (int i = 0 ; i < number_of_files; ++i) {
-//            alldocs[i] = 0;
+            alldocs[i] = 0;
         }
         for (int i = 0 ; i < MAX_LEN_REQUEST; ++i) {
             request[i] = 0;
