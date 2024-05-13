@@ -61,6 +61,7 @@ Trie
 t_init() {
     Trie trie;
     trie.root = add_node();
+    trie.num_of_words = 0;
     return trie;
 }
 
@@ -105,6 +106,9 @@ t_add(Trie *trie, char *word, Vector docs) {
             cur->next[char_to_ind(word[i])] = add_node();
         }
         cur = cur->next[char_to_ind(word[i])];
+    }
+    if (!cur->is_terminal) {
+        trie->num_of_words++;
     }
     cur->is_terminal = 1;
     v_copy(&docs, &cur->data);
@@ -157,9 +161,14 @@ t_push_back(Trie *trie, char *word, int doc) {
         t_add(trie, word, v_init(0));
         v = t_get_ptr(trie, word);
     }
-    if (v->size > 0 && v_get(v, v->size - 1) != doc) {
+    if (v->size > 0 && v_get(v, v->size - 1) == doc) {
         return;
     }
     v_push_back(v, doc);
     return;
+}
+
+inline size_t
+t_num_of_words(Trie *trie) {
+    return trie->num_of_words;
 }

@@ -11,5 +11,11 @@
 #ignore .out files:
 *.out
 
+#ignore .exe files:
+*.exe
+
 #ignore .txt files:
 *.txt
+
+#ignore stupid vscode files:
+*/tempCodeRunnerFile.c

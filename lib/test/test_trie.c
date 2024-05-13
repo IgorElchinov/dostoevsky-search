@@ -66,6 +66,9 @@ main(void) {
     printf("Get %s: ", add_word);
     v_print(&res);
     v_free(&res);
+
+    printf("Number of words: %zu\n", t_num_of_words(&t));     // returns number of different words in trie
+
     t_free(&t); 
     return 0;
 }
