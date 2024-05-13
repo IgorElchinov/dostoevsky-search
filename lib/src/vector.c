@@ -5,7 +5,7 @@
 
 Vector
 v_init(size_t size) {
-    Vector vector;
+    Vector vector = {0};
     vector.size = size;
     if (size == 0) {
         size = 1;
@@ -127,9 +127,7 @@ v_copy(const Vector *src, Vector *dest) {
         fflush(stderr);
         exit(1);
     }
-    if (dest->data != NULL) {
-        free(dest->data);
-    }
+    v_free(dest);
     *dest = v_init(src->capacity);
     dest->size = src->size;
     memcpy(dest->data, src->data, src->size * sizeof(*src->data));

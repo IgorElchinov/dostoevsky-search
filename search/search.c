@@ -79,10 +79,11 @@ main(int argc, char **argv) {
         while (index != n) {
             if (request[index] == ' ' || request[index] == '\n') {
                 ++wordcount;
-                char *word = calloc(lenwordnow, sizeof(*word));
+                char *word = calloc(lenwordnow + 1, sizeof(*word));
                 for (int i = 0; i < lenwordnow; ++i) {
                     word[i] = wordnow[i];
                 }
+                word[lenwordnow] = 0;
                 // 6. Для каждого слова в запросе идём в бор и смотрим, в каких доках оно встречается
                 Vector docs = t_get(&dictionary, word);
                 for (int i = 0; i < docs.size; ++i) {

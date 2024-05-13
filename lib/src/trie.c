@@ -158,7 +158,9 @@ void
 t_push_back(Trie *trie, char *word, int doc) {
     Vector *v = t_get_ptr(trie, word);
     if (v == NULL) {
-        t_add(trie, word, v_init(0));
+        Vector tmp = v_init(0);
+        t_add(trie, word, tmp);
+        v_free(&tmp);
         v = t_get_ptr(trie, word);
     }
     if (v->size > 0 && v_get(v, v->size - 1) == doc) {
