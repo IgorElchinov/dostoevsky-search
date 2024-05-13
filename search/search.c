@@ -12,42 +12,39 @@ enum {
 };
 
 int
-main(int argc, char **argv) {  
+main(int argc, char **argv) {
     // 1. ^ Берём файл с индексом -> его название - argv[1]
     // 2. Разжимаем его
     decompress(argv[1], "index_dec.txt");
-
     // 3. Проходимся по разжатому файлу, создаём книгу (массив) с именами файлов
     FILE *in = fopen("index_dec.txt", "r");
     int number_of_files;
+    char cur;
     fscanf(in, "%d", &number_of_files);
-    char cur = fgetc(in);
+    cur = fgetc(in);
     char **book = calloc(number_of_files, sizeof(*book));
     book[0] = calloc(number_of_files * MAX_LEN_NAME, sizeof(**book));
     for (int i = 1; i < number_of_files; ++i) {
         book[i] = book[i - 1] + MAX_LEN_NAME;
     }
-    
     for (int i = 0; i < number_of_files; ++i) {
         for (int j = 0; j < MAX_LEN_NAME; ++j) {
             book[i][j] = '\n';
         }
     }
     for (int i = 0; i < number_of_files; ++i) {
-        char cur;
         int lenname = 0;
         while((cur = fgetc(in)) != '\n') {
             book[i][lenname] = cur;
             ++lenname;
         }
     }
-
     // 4. Создаём словарь, добавляя слова в бор и номера доков, в которых они встречаются
     int number_of_words;
     fscanf(in, "%d", &number_of_words);
+    char *word = calloc(MAX_LEN_WORD, sizeof(*word));
     Trie dictionary = t_init();
     for (int i = 0; i < number_of_words; ++i) {
-        char *word = calloc(MAX_LEN_WORD, sizeof(*word));
         fscanf(in, "%s", word);
         int number_of_relevant_files;
         fscanf(in, "%d", &number_of_relevant_files);
@@ -56,30 +53,36 @@ main(int argc, char **argv) {
             fscanf(in, "%d", &doc);
             t_push_back(&dictionary, word, doc);
         }
-        free(word);
+        for (int j = 0; j < MAX_LEN_WORD; j++) {
+            word[j] = 0;
+        }
     }
     fclose(in);
-
     // 5. Считываем кол-во запросов и по-отдельности каждый запрос
     int n;
     scanf("%d", &n);
-    cur = fgetc(stdin);
+    cur = getc(stdin);
+    char *request = calloc(MAX_LEN_REQUEST, sizeof(*request));
+    char *wordnow = calloc(MAX_LEN_WORD, sizeof(*wordnow));
+    int *alldocs = calloc(number_of_files, sizeof(*alldocs));
     for (int o = 0; o < n; ++o) {
-        int *alldocs = calloc(number_of_files, sizeof(*alldocs));
         for (int i = 0 ; i < number_of_files; ++i) {
             alldocs[i] = 0;
         }
-        char *request = calloc(MAX_LEN_REQUEST, sizeof(*request));
+        for (int i = 0 ; i < MAX_LEN_REQUEST; ++i) {
+            request[i] = 0;
+        }
+        for (int i = 0 ; i < MAX_LEN_WORD; ++i) {
+            wordnow[i] = 0;
+        }
         fgets(request, MAX_LEN_REQUEST - 1, stdin);
         size_t n = strlen(request);
         int index = 0;
-        char *wordnow = calloc(MAX_LEN_WORD, sizeof(*wordnow));
         int lenwordnow = 0;
         int wordcount = 0;
         while (index != n) {
             if (request[index] == ' ' || request[index] == '\n') {
                 ++wordcount;
-                char *word = calloc(lenwordnow + 1, sizeof(*word));
                 for (int i = 0; i < lenwordnow; ++i) {
                     word[i] = wordnow[i];
                 }
@@ -90,16 +93,15 @@ main(int argc, char **argv) {
                     ++alldocs[v_get(&docs, i)];
                 }
                 lenwordnow = 0;
-                free(word);
+                v_free(&docs);
             } else {
                 wordnow[lenwordnow] = request[index];
                 ++lenwordnow;
             }
             ++index;
         }
-        free(wordnow);
-        int flag = 0;
         // 7. Находим пересечение
+        int flag = 0;
         for (int i = 0; i < number_of_files; ++i) {
             if (alldocs[i] == wordcount) {
                 flag = 1;
@@ -107,7 +109,7 @@ main(int argc, char **argv) {
                 int j = 0;
                 while (book[i][j] != '\n') {
                     printf("%c", book[i][j]);
-                    ++j;
+                    j++;
                 }
                 printf("\n");
             }
@@ -115,12 +117,14 @@ main(int argc, char **argv) {
         if (flag == 0) {
             printf("No suitable files were found.\n");
         }
-        free(alldocs);
     }
-
-    // 9. Побочная ересь
+    // 9. Освобождаем память
     t_free(&dictionary);
     free(*book);
     free(book);
+    free(alldocs);
+    free(request);
+    free(wordnow);
+    free(word);
     return 0;
 }

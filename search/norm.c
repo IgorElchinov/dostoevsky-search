@@ -364,18 +364,16 @@ enum {
 };
 
 int
-main(void) {  //int argc, char **argv
+main(int argc, char **argv) {
     // 1. ^ Берём файл с индексом -> его название - argv[1]
     // 2. Разжимаем его
-    //decompress(argv[1], "index_dec.txt");
-
+    decompress(argv[1], "index_dec.txt");
     // 3. Проходимся по разжатому файлу, создаём книгу (массив) с именами файлов
     FILE *in = fopen("index_dec.txt", "r");
     int number_of_files;
     char cur;
     fscanf(in, "%d", &number_of_files);
     cur = fgetc(in);
-    printf("%d\n", number_of_files); // check
     char **book = calloc(number_of_files, sizeof(*book));
     book[0] = calloc(number_of_files * MAX_LEN_NAME, sizeof(**book));
     for (int i = 1; i < number_of_files; ++i) {
@@ -393,18 +391,6 @@ main(void) {  //int argc, char **argv
             ++lenname;
         }
     }
-
-    //check.begin
-    // for (int i = 0; i < number_of_files; ++i) {
-    //     for (int j = 0; j < MAX_LEN_NAME; ++j) {
-    //         if (book[i][j] == '\n') {
-    //             break;
-    //         }
-    //         printf("%c", book[i][j]);
-    //     }
-    //     printf("\n");
-    // }
-
     // 4. Создаём словарь, добавляя слова в бор и номера доков, в которых они встречаются
     int number_of_words;
     fscanf(in, "%d", &number_of_words);
@@ -460,13 +446,10 @@ main(void) {  //int argc, char **argv
                 }
                 lenwordnow = 0;
                 v_free(&docs);
-                //printf("%c %d ", request[index], request[index]);
             } else {
                 wordnow[lenwordnow] = request[index];
                 ++lenwordnow;
-                //printf("%c %d ", request[index], request[index]);
             }
-            // printf("%c %d ", request[index], request[index]);
             ++index;
         }
         // 7. Находим пересечение
@@ -487,7 +470,7 @@ main(void) {  //int argc, char **argv
             printf("No suitable files were found.\n");
         }
     }
-    // 9. Побочная ересь
+    // 9. Освобождаем память
     t_free(&dictionary);
     free(*book);
     free(book);
