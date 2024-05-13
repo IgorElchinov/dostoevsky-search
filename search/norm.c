@@ -420,7 +420,7 @@ main(void) {  //int argc, char **argv
             t_push_back(&dictionary, word, doc);
         }
         for (int j = 0; j < MAX_LEN_WORD; j++) {
-            word[i] = 0;
+            word[j] = 0;
         }
     }
     fclose(in);
