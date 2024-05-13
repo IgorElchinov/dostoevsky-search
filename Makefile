@@ -8,6 +8,7 @@ BINDIR=./lib/bin
 HEADDIR=./lib/headers
 FLAGS= -g -Wall -iquote $(HEADDIR)
 ADD= 
+DOCS=
 
 all: make_dirs lib index.out search.out
 
@@ -52,7 +53,8 @@ libhaffman.so: $(SRCDIR)/haffman.c                                    # compilin
 lib: libvector.so libtrie.so liblist_str.so libhash_table.so libunordered_set.so libmap_node.so liblist_of_map_nodes.so libunordered_map.so libhaffman.so
 
 run: all                                                                             # target to run code
-	./runner $(TARGET)
+	./index.out $(DOCS)
+	./search.out index.txt
 
 clean:                                                                               # target to clean binary files
 	rm -f *.out *.o $(BINDIR)/*.so
