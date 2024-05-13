@@ -118,9 +118,6 @@ main(int argc, char **argv) {
             int size = 0;
             for (int i = 0; i < len; i++) {
                 if (valid_char(word[i])) {
-                    if (word[i] >= 'A' && word[i] <= 'Z') {
-                        word[i] += 32;
-                    }
                     res[size] = word[i];
                     size++;
                 }
