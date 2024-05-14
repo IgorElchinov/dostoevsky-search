@@ -10,7 +10,7 @@ st_print(Stack *st) {
     }
     int i = 0;
     for (; st != NULL; st = st->next) {
-        printf("%d %p %p\n", i++, st, st->data);
+        printf("%d %p->%p : %p\n", i++, st, st->next, st->data);
     }
     return;
 }

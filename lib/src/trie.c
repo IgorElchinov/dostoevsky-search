@@ -110,14 +110,14 @@ t_free(Trie *trie) {
         return;
     }
     Stack *st = {0};
-    st_push(st, trie->root);
+    st = st_push(st, trie->root);
     while (st != NULL) {
         TrieNode *cur = st->data;
         st = st_pop(st);
         v_free(&cur->data);
         for (int i = 0; i < MAX_NEXT_NUM; ++i) {
             if (cur->next[i] != NULL) {
-                st_push(st, cur->next[i]);
+                st = st_push(st, cur->next[i]);
             }
         }
         free(cur);
