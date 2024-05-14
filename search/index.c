@@ -7,7 +7,7 @@
 #include "haffman.h"
 
 enum {
-    MAX_STRING_SIZE = 100
+    MAX_STRING_SIZE = 105
 };
 
 int

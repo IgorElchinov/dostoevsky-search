@@ -79,6 +79,7 @@ free_node(TrieNode *node) {
     }
     v_free(&node->data);
     free(node);
+    return;
 }
 
 void
