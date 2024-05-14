@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "stack.h"
 
 const static char *__valid_chars = "`,',-,a-z,A-Z,0-9";             // can be changed
 
@@ -65,6 +66,8 @@ t_init() {
     return trie;
 }
 
+/*  =====  obsolete  =====  */
+/*
 static void
 free_node(TrieNode *node) {
     if (node == NULL) {
@@ -91,6 +94,33 @@ t_free(Trie *trie) {
     }
     if (trie->root != NULL) {
         free_node(trie->root);
+    }
+    return;
+}
+*/
+
+void
+t_free(Trie *trie) {
+    if (trie == NULL) {
+        fprintf(stderr, "%s: trie ptr is NULL", __func__);
+        fflush(stderr);
+        exit(1);
+    }
+    if (trie->root == NULL) {
+        return;
+    }
+    Stack *st = {0};
+    st_push(st, trie->root);
+    while (st != NULL) {
+        TrieNode *cur = st->data;
+        st = st_pop(st);
+        v_free(&cur->data);
+        for (int i = 0; i < MAX_NEXT_NUM; ++i) {
+            if (cur->next[i] != NULL) {
+                st_push(st, cur->next[i]);
+            }
+        }
+        free(cur);
     }
     return;
 }

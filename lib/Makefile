@@ -44,7 +44,7 @@ libvector.so: $(SRCDIR)/vector.c                                    # compiling 
 	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC
 
 libtrie.so: $(SRCDIR)/trie.c                                        # compiling dynamic library for trie
-	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC -lvector
+	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC -lvector -lstack
 
 libunordered_set.so: $(SRCDIR)/unordered_set.c libhash_table.so     # compiling dynamic library for unordered_set
 	$(CC) -c --shared $< -o $(BINDIR)/$@ $(FLAGS) -fPIC -lhash_table
