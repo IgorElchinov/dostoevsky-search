@@ -1,4 +1,4 @@
-// #include "haffman.h"
+#include "haffman.h"
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -15,20 +15,6 @@ enum {
     BITS_IN_INTEGER = 31,
     SYMBOLS_TO_WRITE = 2048
 };
-
-typedef struct HaffmanNode {
-    unsigned char symbol;
-    int count;
-    char bit;
-    struct HaffmanNode *left;
-    struct HaffmanNode *right;
-} HaffmanNode;
-
-typedef struct HaffmanCode {
-    unsigned char symbol;
-    int code;
-    char code_length;
-} HaffmanCode;
 
 void
 swap_pairs(HaffmanNode *a, HaffmanNode *b) {
@@ -341,22 +327,4 @@ decompress(char *compressed_filename, char *decompressed_filename) {
     free(unsorted_code_table);
     free(decompressed_str);
     free(sorted_code_table);
-}
-
-int
-main() {
-    double time_spent = 0.0;
-    clock_t begin = clock();
-    compress("War_and_peace.txt", "Compressed_War_and_peace.txt");
-    clock_t end = clock();
-    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
-    printf("The compress time is %f seconds\n", time_spent);
-    time_spent = 0.0;
-    begin = clock();
-    decompress("Compressed_War_and_peace.txt", "decompressed_War_and_peace.txt");
-    end = clock();
-    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
-    printf("The decompress time is %f seconds\n", time_spent);
-    // compress("q.txt", "q_c.txt", "decompressed_war_and_peace.txt");
-    // decompress("q_c.txt", "dq_c.txt");
 }
