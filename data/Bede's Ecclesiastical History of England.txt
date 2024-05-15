@@ -1,4 +1,4 @@
-ÔªøThe Project Gutenberg eBook of Bede's Ecclesiastical History of England
+The Project Gutenberg eBook of Bede's Ecclesiastical History of England
     
 This ebook is for the use of anyone anywhere in the United States and
 most other parts of the world at no cost and with almost no restrictions
@@ -88,7 +88,7 @@ Book I
    aforesaid enemies, they were reduced to greater distress than before.
    Chap. XIII. How in the reign of Theodosius the younger, in whose time
    Palladius was sent to the Scots that believed in Christ, the Britons
-   begging assistance of √Ütius, the consul, could not obtain it. [446
+   begging assistance of ?tius, the consul, could not obtain it. [446
    A.D.]
    Chap. XIV. How the Britons, compelled by the great famine, drove the
    barbarians out of their territories; and soon after there ensued, along
@@ -1961,7 +1961,7 @@ food except such as could be procured in the chase.
 
 Chap. XIII. How in the reign of Theodosius the younger, in whose time
 Palladius was sent to the Scots that believed in Christ, the Britons
-begging assistance of √Ütius, the consul, could not obtain it. [446 A.D.]
+begging assistance of ?tius, the consul, could not obtain it. [446 A.D.]
 
 
 In the year of our Lord 423, Theodosius, the younger, the forty-fifth from
@@ -3631,7 +3631,7 @@ presence; and of the vengeance that pursued them for their contempt.
 In the meantime, Augustine, with the help of King Ethelbert, drew together
 to a conference the bishops and doctors of the nearest province of the
 Britons, at a place which is to this day called, in the English language,
-Augustine's √Åc, that is, Augustine's Oak,(162) on the borders of the
+Augustine's Ac, that is, Augustine's Oak,(162) on the borders of the
 Hwiccas(163) and West Saxons; and began by brotherly admonitions to
 persuade them to preserve Catholic peace with him, and undertake the
 common labour of preaching the Gospel to the heathen for the Lord's sake.
@@ -8964,7 +8964,7 @@ would rise up from table and go out and return home.
 Once having done so and gone out of the house where the banquet was, to
 the stable, where he had to take care of the cattle that night, he there
 composed himself to rest at the proper time. Thereupon one stood by him in
-his sleep, and saluting him, and calling him by his name, said, "C√¶dmon,
+his sleep, and saluting him, and calling him by his name, said, "C?dmon,
 sing me something." But he answered, "I cannot sing, and for this cause I
 left the banquet and retired hither, because I could not sing." Then he
 who talked to him replied, "Nevertheless thou must needs sing to me."
@@ -11743,7 +11743,7 @@ at length under their particular dates, that they may be the better kept
 in memory.(1031)
 
 In the sixtieth year before the Incarnation of our Lord, Caius Julius
-C√¶sar, first of the Romans invaded Britain, and was victorious, yet could
+C?sar, first of the Romans invaded Britain, and was victorious, yet could
 not maintain the supreme power there. [I, 2.]
 
 In the year of our Lord, 46, Claudius, being the second of the Romans who
@@ -12568,7 +12568,7 @@ Augustine, St., sent by Pope Gregory to convert the English, xxi, xxii,
 Augustine, St., Bishop of Hippo, 21, 388;
   The Sentences of, 341 n.
 
-Augustine's √Åc, or Augustine's Oak, Synod at, 84-86.
+Augustine's Ac, or Augustine's Oak, Synod at, 84-86.
 
 Augustus, Emperor, 11, 12, 13, 20, 22, 26, 29, 42.
 
@@ -12576,7 +12576,7 @@ Aurelius Commodus, Emperor, 12.
 
 Aurelius Victor, quoted, 135 n.
 
-Aust, probably Augustine's √Åc, 84 n.
+Aust, probably Augustine's Ac, 84 n.
 
 Austerfield, Northumbria, 353 n.
 
@@ -12906,7 +12906,7 @@ Bretwalda, _see_ Aelli, Caelin, Edwin, Ethelbert, Oswald, Oswy, Redwald.
 
 Bridius, or Bruide Mac Maelchon, King of the Picts, 141 n., 142.
 
-Brige, In Brige, or Faremo√ªtier-en-Brie, monastery of, 151, 152.
+Brige, In Brige, or Faremoutier-en-Brie, monastery of, 151, 152.
 
 Brige, Abbess of, _see_ Fara, Ethelberg, Saethryth.
 
@@ -13364,7 +13364,7 @@ Comets, xxxi, 242, 378, 385, 386.
 Communion, Holy, 53, 54, 55, 56, 58, 60, 61, 62, 65, 96, 101, 249, 275,
             280, 363.
 
-Compi√®gne, Royal Villa, 206.
+Compiegne, Royal Villa, 206.
 
 Conall, King of the Dalriadic Scots, 142 n.
 
@@ -13721,7 +13721,7 @@ Dudden, F. Homes, his "Gregory the Great," editorial references to, 75 n.,
 
 Dugdale's "Monasticon," editorial references to, 18 n., 275 n.
 
-Dumbarton, Alcluith, or D√∫nbrettan, 9, 24, 25.
+Dumbarton, Alcluith, or Dunbrettan, 9, 24, 25.
 
 Dumnonia, 344 n.
 
@@ -13731,7 +13731,7 @@ Dunawd, _see_ Dinoot.
 
 Dunbar, 352 n.
 
-D√∫nbrettan, _see_ Dumbarton.
+Dunbrettan, _see_ Dumbarton.
 
 Dunchad, Abbot of Iona, 376.
 
@@ -14255,13 +14255,13 @@ Exorcism of Evil Spirits, 311 n.
 
 "Ezra," 387, 388.
 
-Fain√©ant, Roi, _see_ Clothaire III.
+Faineant, Roi, _see_ Clothaire III.
 
 Famines, 26, 27, 28.
 
 Fara, or Burgundofara, foundress of the Monastery of Brige, 151, 215 n.
 
-Faremo√ªtier-en-Brie, or Farae Monasterium in Brige, _see_ Brige.
+Faremoutier-en-Brie, or Farae Monasterium in Brige, _see_ Brige.
 
 Farne, Isle of, or House Island, xxix, 168, 288, 295, 301, 302.
 
@@ -14378,7 +14378,7 @@ Fullan, or Foillan, brother of Fursa, 177.
 
 Fuller, his story about Bede's epitaph, xxxiv.
 
-F√ºnen, 317 n.
+Funen, 317 n.
 
 Fursa, St., xxvi, 173-178.
 
@@ -14853,7 +14853,7 @@ In Berecingum, _see_ Barking.
 
 In Brige, _see_ Brige.
 
-In Compendio, _see_ Compi√®gne.
+In Compendio, _see_ Compiegne.
 
 Incuneningum, 325.
 
@@ -15138,7 +15138,7 @@ Lent, 38, 151, 186, 206.
 
 Leptis in Tripolis, 12.
 
-L√©rins, 33.
+Lerins, 33.
 
 Leutherius, or Hlothere, Bishop of Wessex, nephew of Agilbert, 147, 150,
             151;
@@ -15161,7 +15161,7 @@ Lichfield, Bishop of, _see_ Aldwin, Ceadda, Hedda, Sexwulf, Wynfrid.
 
 Liddesdale, 73 n.
 
-Li√®ge, 177 n.
+Liege, 177 n.
 
 Light, Supernatural, 157, 232, 233, 234, 322.
 
@@ -15275,7 +15275,7 @@ Maintz, Bishop of, _see_ Boniface, Redger, Lul.
 Malachi, quoted, 367.
 
 Malmesbury, or City of Maildufus, 343, 344;
-  perhaps Augustine's √Åc, 84 n.
+  perhaps Augustine's Ac, 84 n.
 
 Malmesbury, Abbot of, _see_ Aldhelm.
 
@@ -15590,7 +15590,7 @@ Nottinghamshire, 115 n.
 
 Numbers, quoted, 362.
 
-Oak, the (possibly Augustine's √Åc), 84 n.
+Oak, the (possibly Augustine's Ac), 84 n.
 
 Octa, grandfather of Ethelbert, King of Kent, 95.
 
@@ -15885,10 +15885,10 @@ Pentecost, _see_ Whitsuntide.
 
 Perctarit, King of the Lombards, 351 n.
 
-Perrona, or P√©ronne, Church at, 178;
+Perrona, or Peronne, Church at, 178;
   Monastery of, 177 n., 178 n.
 
-P√©ronne, Abbot of, _see_ Ultan.
+Peronne, Abbot of, _see_ Ultan.
 
 Persia, King of, _see_ Chosroes.
 
@@ -16157,9 +16157,9 @@ Rowley Water, 135 n.
 
 Rufinianus, Abbot of St. Augustine's Monastery, 64.
 
-R√ºgen, 317 n.
+Rugen, 317 n.
 
-R√ºgenwalde, 317 n.
+Rugenwalde, 317 n.
 
 Rugii, the, 317 n.
 
@@ -16286,7 +16286,7 @@ SS. Peter and Paul, monastery of, at Wearmouth and Jarrow, 386;
 
 St. Saviour's Church, Utrecht, 324.
 
-St. Stephen's Church, Faremo√ªtier-en-Brie, 153.
+St. Stephen's Church, Faremoutier-en-Brie, 153.
 
 Santi Quattro Coronati, Church of, at Rome, 99 n.
 
@@ -16400,7 +16400,7 @@ Severus, Emperor, divides Britain by a rampart, 12, 13, 25, 382;
   his government of Britain, 12;
   death, 12, 13.
 
-Severus, Bishop of Tr√®ves, accompanies Germanus to Britain, 39, 40.
+Severus, Bishop of Treves, accompanies Germanus to Britain, 39, 40.
 
 Sexbald of Essex, 184.
 
@@ -16780,9 +16780,9 @@ Trajectum, _see_ Wiltaburg.
 Trent, The River, 45, 115 n., 123;
   the battle of the, xxix, 267, 268.
 
-Tr√®ves, or the Treveri, 40, 324 n.
+Treves, or the Treveri, 40, 324 n.
 
-Tr√®ves, Bishop of, _see_ Severus.
+Treves, Bishop of, _see_ Severus.
 
 Trinity, Invocation of the, xxxiv, 87 n.
 
@@ -16838,7 +16838,7 @@ Ulster, 8 n.
 
 "Ulster, the Annals of," editorial references to, 225 n., 385 n.
 
-Ultan, a hermit, Abbot of Fosse and P√©ronne, brother of Fursa, 177.
+Ultan, a hermit, Abbot of Fosse and Peronne, brother of Fursa, 177.
 
 Undalum, _see_ Oundle.
 
@@ -17064,7 +17064,7 @@ Wilbrord, Missionary, Archbishop of Frisland, xxx, 143 n., 161, 319 n.;
   his consecration, 324;
   given the name of Clement in religion, 324;
   his see at Utrecht, 324;
-  his monastery near Tr√®ves, 324 n.;
+  his monastery near Treves, 324 n.;
   calendar said to contain an entry by him, 324 n.;
   builds St. Saviour's, and rebuilds St. Martin's Church, Utrecht, 324 n.;
   date of his death, 325 n.;
@@ -17257,7 +17257,7 @@ Ythancaestir, Monastery of, 183, 187.
 
 Zacharias, Pope, letter to Boniface, 87 n.
 
-Zeuss, his "Die Deutschen und die Nachbarst√§mme," 317 n.
+Zeuss, his "Die Deutschen und die Nachbarstamme," 317 n.
 
 Zozimus, Pope, 21 n.
 
@@ -17566,7 +17566,7 @@ FOOTNOTES
       Britain").
 
    75 Alcluith is the Welsh name (Ail = a rock). The Goidels called it
-      D√∫nbrettan = the fortress of the Britons. Hence its modern name,
+      Dunbrettan = the fortress of the Britons. Hence its modern name,
       Dumbarton. The river is, of course, the Clyde.
 
    76 This is the earthen rampart, about thirty-five miles in length,
@@ -17660,7 +17660,7 @@ _   89 I.e._, in Thanet.
       missionary to the Irish mentioned c. 13). The two statements are not
       irreconcilable (cf. Bright, p. 18). There are churches dedicated to
       SS. Germanus and Lupus in Wales and Cornwall. Both had been trained
-      in the school of L√©rins, a monastery in the group of islands off the
+      in the school of Lerins, a monastery in the group of islands off the
       coast at Cannes.
 
    94 This conference is said to have been held at Verulam.
@@ -17682,7 +17682,7 @@ _   89 I.e._, in Thanet.
       river in which the army was baptized is said to be the Alyn (Ussher,
       "Antiqq."). The story is generally regarded as legendary.
 
-   99 Thirteenth bishop of Tr√®ves. This account sums up nearly all that is
+   99 Thirteenth bishop of Treves. This account sums up nearly all that is
       known of him.
 
   100 This second voyage of St. Germanus is supposed to have taken place
@@ -18282,7 +18282,7 @@ _  233 I.e._, Easter Eve. Cf. c. 9, p. 104, note 3.
 
   238 Yeavering in Glendale, near Wooler in Northumberland. The name,
       Adgefrin, is one of those (common in Anglo-Saxon) in which the
-      preposition is prefixed. "√Üt" (Latin _ad_) and "in" are so used. The
+      preposition is prefixed. "?t" (Latin _ad_) and "in" are so used. The
       idiom is preserved in the Latin. Cf. Ad Murum, Ad Caprae Caput (III,
       21), Infeppingum _(ibid.), et saep._
 
@@ -18688,7 +18688,7 @@ _  309 I.e._, they were not "Quartodecimans" (cf. II, 2, p. 84, note 3).
 
   331 II, 5-9, 20; V, 24.
 
-  332 Faremo√ªtier-en-Brie (Farae Monasterium in Brige), founded _circ._
+  332 Faremoutier-en-Brie (Farae Monasterium in Brige), founded _circ._
       617 by Fara, or Burgundofara, a Burgundian lady of noble birth, said
       to have been dedicated by St. Columba in her infancy. The monastery
       was a double one, _i.e._, consisted of monks and nuns (cf. _infra_,
@@ -18876,9 +18876,9 @@ _  386 I.e._, Ireland.
   388 Fullan, or Foillan, was apparently a bishop (the others are called
       "presbyteri"). He and Ultan after Fursa's death (_circ._ 650) went
       to South Brabant. Ultan founded a monastery at Fosse in the diocese
-      of Li√®ge (then of Maestricht), and Fullan laboured in conjunction
+      of Liege (then of Maestricht), and Fullan laboured in conjunction
       with St. Gertrude in the double monastery of Nivelles. Ultan became
-      abbot, first of Fosse and later of P√©ronne. The name Gobban occurs
+      abbot, first of Fosse and later of Peronne. The name Gobban occurs
       frequently in Irish Church History, Dicull occasionally. There is a
       Dicull mentioned in IV, 13.
 
@@ -18889,7 +18889,7 @@ _  389 I.e._, the Mercians; _v.s._ c. 18.
 
   391 Lagny on the Marne, near Paris.
 
-  392 P√©ronne on the Somme. The monastery founded there after his death
+  392 Peronne on the Somme. The monastery founded there after his death
       was called "Perrona Scotorum" from the number of Irish who resorted
       to it.
 
@@ -19212,7 +19212,7 @@ _  480 I.e._, Ireland.
   491 "Acceptum sacerdotii gradum," A.S. "biscophade onfeng" = he received
       the episcopate. Cf. c. 4, note.
 
-  492 In 664. This was the young "Fain√©ant" king of Neustria, Clothaire
+  492 In 664. This was the young "Faineant" king of Neustria, Clothaire
       III. Wilfrid was probably sent abroad at his own request. Doubtless
       he desired to have the canonical number of three bishops at his
       consecration, and Boniface of Dunwich (c. 20; IV, 5) was the only
@@ -19225,7 +19225,7 @@ _  480 I.e._, Ireland.
 
   494 Cf. _ibid._, note.
 
-  495 Compi√®gne, a royal "villa." For the preposition, _v._ II, 14, note.
+  495 Compiegne, a royal "villa." For the preposition, _v._ II, 14, note.
       The ceremony was a specially magnificent one, Wilfrid being carried
       in a golden chair by twelve bishops in choral procession, according
       to an ancient custom of the Gallican Church.
@@ -19333,7 +19333,7 @@ _  526 I.e._, the Eastern, which consisted in shaving the whole head. This
       2, p. 85, note.
 
   527 They were accompanied by Benedict Biscop (_v._ c. 18) whom Vitalian
-      had asked to act as their guide and interpreter ("Hist. Abb.," ¬ß 3).
+      had asked to act as their guide and interpreter ("Hist. Abb.," ß 3).
 
   528 Archbishop of Arles, 658-675.
 
@@ -19551,7 +19551,7 @@ _  526 I.e._, the Eastern, which consisted in shaving the whole head. This
   580 In III, 30.
 
   581 Cc. 7-10. She is not to be confused with Ethelberg, daughter of Anna
-      (III, 8), Abbess of Faremo√ªtier-en-Brie.
+      (III, 8), Abbess of Faremoutier-en-Brie.
 
   582 Chertsey in Surrey. William of Malmesbury tells us that it was a
       flourishing monastery till it was destroyed by the Danes.
@@ -19818,7 +19818,7 @@ _  634 v._ V, 7 _ad fin._ Like Caedwalla, a descendant of Ceaulin, "A king
       5, _ad init._ Probably he succeeded in 671. Ethelred of Mercia
       succeeded in 675 (V, 24), so that Sept., 680, might easily fall in
       his sixth year; Aldwulf, of East Anglia, in 663 or 664 (_v._ II, 15;
-      IV, 23). The eighth indiction, whether C√¶sarean or Pontifical
+      IV, 23). The eighth indiction, whether C?sarean or Pontifical
       (_v.s._ c. 5, note), includes Sept. 17, 680.
 
   646 Generally identified with Hatfield in Hertfordshire, but T. Kerslake
@@ -19859,7 +19859,7 @@ _  634 v._ V, 7 _ad fin._ Like Caedwalla, a descendant of Ceaulin, "A king
       English prelates at Hatfield were probably influenced by this
       precedent.
 
-  652 Cf. Bede's "History of the Abbots," ¬ß 6.
+  652 Cf. Bede's "History of the Abbots," ß 6.
 
 _  653 I.e._, St. Peter's at Rome. The Monastery of St. Martin was on the
       Esquiline. It was founded by Pope Symmachus in honour of SS.
@@ -19886,7 +19886,7 @@ _  653 I.e._, St. Peter's at Rome. The Monastery of St. Martin was on the
       but died at Langres in the same year. Bede was trained under him (V,
       24) and was probably the little boy left alone with him to recite
       the offices when the pestilence of 686 swept away the monks. (Anon.
-      Hist. Abb. ¬ß 14.)
+      Hist. Abb. ß 14.)
 
   656 Cf. II, 20, _ad fin._, note.
 
@@ -20131,7 +20131,7 @@ _  708 I.e._, the Prioress.
       Northumbrian version being the oldest.
 
   710 "Villicus," A.S. "tun-gerefa" = town-reeve, _i.e._, headman of the
-      township. C√¶dmon was apparently a herdsman on a farm belonging to
+      township. C?dmon was apparently a herdsman on a farm belonging to
       the monastery.
 
   711 Cf. Levit., xi, 3, and Deut., xiv, 6.
@@ -20338,7 +20338,7 @@ _  755 Ibid._
       climiterium, clymitorium) seems inexplicable. Smith reads
       "coemeterium," probably on the authority of a gloss ("id est
       cimeterium") on some of the later MSS., and it has generally been
-      translated "cemetery." The AS. version has "geb√¶d hus 7 ciricean" =
+      translated "cemetery." The AS. version has "geb?d hus 7 ciricean" =
       oratory and church.
 
   777 Acts, iii, 2-8.
@@ -20356,7 +20356,7 @@ _  755 Ibid._
       verb, _studere_, Ducange gives instances of this meaning: "Iussitque
       rex, ut studeretur a medicis"; Greg. Turon., vi, 32. "Episcopus,
       adhibito mulomedico, jussit ei (equo) studium impendere, quo
-      scilicet sanari potuisset"; St. Audo√´nus, lib. 2; Vit. St. Eligii,
+      scilicet sanari potuisset"; St. Audoenus, lib. 2; Vit. St. Eligii,
       44.
 
   782 Bishop John had studied under Theodore. Cf. IV, 23, note.
@@ -20468,9 +20468,9 @@ _  799 I.e._, Sergius was his godfather (cf. III, 7, where Oswald stands
       the region beyond the Ems. The Rugini are probably the Rugii (_v._
       Tacitus, Germania, Chapter XLIII). They were on the shores of the
       Baltic, probably about the mouth of the Oder (the name survives in
-      R√ºgen and R√ºgenwalde). They are found with other North German tribes
+      Rugen and Rugenwalde). They are found with other North German tribes
       in the army of Attila, and afterwards formed a settlement on the
-      Lower Danube. The Danes were mainly in Jutland, F√ºnen, and the
+      Lower Danube. The Danes were mainly in Jutland, Funen, and the
       extreme south of Scandinavia. The Huns, who appeared in Europe
       towards the end of the fourth century and menaced both the Eastern
       and Western Empires, were, after Attila's death, driven eastwards,
@@ -20481,7 +20481,7 @@ _  799 I.e._, Sergius was his godfather (cf. III, 7, where Oswald stands
       new name for a union of nations which comprised the Cherusci,
       Chauci, Angrivarii (and perhaps other tribes) of Tacitus. The
       Boructuari are the Bructeri in Westphalia (_v._ Zeuss, "Die
-      Deutschen und die Nachbarst√§mme").
+      Deutschen und die Nachbarstamme").
 
   816 Cf. IV, 27 (note) and 28.
 
@@ -20569,7 +20569,7 @@ _  799 I.e._, Sergius was his godfather (cf. III, 7, where Oswald stands
 
   837 This was Santa Cecilia in Trastevere. The festival is 22nd November.
       As to the year, Mr. Plummer considers that an entry in an old
-      calendar belonging to Epternach, near Tr√®ves, Wilbrord's own
+      calendar belonging to Epternach, near Treves, Wilbrord's own
       monastery, giving the date 695, is almost certainly by Wilbrord
       himself.
 
@@ -21118,12 +21118,12 @@ _  966 I.e._ Alexandrians.
       work is lost.
 
   975 Archbishop of Alexandria, 385-412. He made a cycle of 418 years (19
-      √ó 22) for Theodosius, and reckoned the days on which Easter would
+      ? 22) for Theodosius, and reckoned the days on which Easter would
       fall for 100 years from the first year of the consulate of
       Theodosius (380 A.D.).
 
   976 The great Archbishop of Alexandria, 412-444. He shortened the cycle
-      of Theophilus, making a cycle of ninety-five years (19 √ó 5), for the
+      of Theophilus, making a cycle of ninety-five years (19 ? 5), for the
       sake of convenience. Part of his "Computus Paschalis" remains.
 
   977 A monk of the Western Church in the sixth century. The surname,
@@ -21131,7 +21131,7 @@ _  966 I.e._ Alexandrians.
       heart. Our method of dating from the Birth of Christ was begun by
       him. He revived the cycle of Victorius (or Victorinus) of Aquitaine
       (463 A.D.), hence called Dionysian. It was a cycle of 532 years,
-      _i.e._ the lunar cycle of 19 √ó the solar cycle of 28.
+      _i.e._ the lunar cycle of 19 ? the solar cycle of 28.
 
   978 Cf. p. 369, note 5.
 
@@ -21524,7 +21524,7 @@ _ 1060 I.e._, of York.
 
     
 
-Updated editions will replace the previous one‚Äîthe old editions will
+Updated editions will replace the previous oneóthe old editions will
 be renamed.
 
 Creating the works from print editions not protected by U.S. copyright
@@ -21533,7 +21533,7 @@ so the Foundation (and you!) can copy and distribute it in the United
 States without permission and without paying copyright
 royalties. Special rules, set forth in the General Terms of Use part
 of this license, apply to copying and distributing Project
-Gutenberg‚Ñ¢ electronic works to protect the PROJECT GUTENBERG‚Ñ¢
+Gutenbergô electronic works to protect the PROJECT GUTENBERGô
 concept and trademark. Project Gutenberg is a registered trademark,
 and may not be used if you charge for an eBook, except by following
 the terms of the trademark license, including paying royalties for use
@@ -21541,7 +21541,7 @@ of the Project Gutenberg trademark. If you do not charge anything for
 copies of this eBook, complying with the trademark license is very
 easy. You may use this eBook for nearly any purpose such as creation
 of derivative works, reports, performances and research. Project
-Gutenberg eBooks may be modified and printed and given away‚Äîyou may
+Gutenberg eBooks may be modified and printed and given awayóyou may
 do practically ANYTHING in the United States with eBooks not protected
 by U.S. copyright law. Redistribution is subject to the trademark
 license, especially commercial redistribution.
@@ -21553,52 +21553,52 @@ THE FULL PROJECT GUTENBERG LICENSE
 
 PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
 
-To protect the Project Gutenberg‚Ñ¢ mission of promoting the free
+To protect the Project Gutenbergô mission of promoting the free
 distribution of electronic works, by using or distributing this work
-(or any other work associated in any way with the phrase ‚ÄúProject
-Gutenberg‚Äù), you agree to comply with all the terms of the Full
-Project Gutenberg‚Ñ¢ License available with this file or online at
+(or any other work associated in any way with the phrase ìProject
+Gutenbergî), you agree to comply with all the terms of the Full
+Project Gutenbergô License available with this file or online at
 www.gutenberg.org/license.
 
-Section 1. General Terms of Use and Redistributing Project Gutenberg‚Ñ¢
+Section 1. General Terms of Use and Redistributing Project Gutenbergô
 electronic works
 
-1.A. By reading or using any part of this Project Gutenberg‚Ñ¢
+1.A. By reading or using any part of this Project Gutenbergô
 electronic work, you indicate that you have read, understand, agree to
 and accept all the terms of this license and intellectual property
 (trademark/copyright) agreement. If you do not agree to abide by all
 the terms of this agreement, you must cease using and return or
-destroy all copies of Project Gutenberg‚Ñ¢ electronic works in your
+destroy all copies of Project Gutenbergô electronic works in your
 possession. If you paid a fee for obtaining a copy of or access to a
-Project Gutenberg‚Ñ¢ electronic work and you do not agree to be bound
+Project Gutenbergô electronic work and you do not agree to be bound
 by the terms of this agreement, you may obtain a refund from the person
 or entity to whom you paid the fee as set forth in paragraph 1.E.8.
 
-1.B. ‚ÄúProject Gutenberg‚Äù is a registered trademark. It may only be
+1.B. ìProject Gutenbergî is a registered trademark. It may only be
 used on or associated in any way with an electronic work by people who
 agree to be bound by the terms of this agreement. There are a few
-things that you can do with most Project Gutenberg‚Ñ¢ electronic works
+things that you can do with most Project Gutenbergô electronic works
 even without complying with the full terms of this agreement. See
 paragraph 1.C below. There are a lot of things you can do with Project
-Gutenberg‚Ñ¢ electronic works if you follow the terms of this
-agreement and help preserve free future access to Project Gutenberg‚Ñ¢
+Gutenbergô electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenbergô
 electronic works. See paragraph 1.E below.
 
-1.C. The Project Gutenberg Literary Archive Foundation (‚Äúthe
-Foundation‚Äù or PGLAF), owns a compilation copyright in the collection
-of Project Gutenberg‚Ñ¢ electronic works. Nearly all the individual
+1.C. The Project Gutenberg Literary Archive Foundation (ìthe
+Foundationî or PGLAF), owns a compilation copyright in the collection
+of Project Gutenbergô electronic works. Nearly all the individual
 works in the collection are in the public domain in the United
 States. If an individual work is unprotected by copyright law in the
 United States and you are located in the United States, we do not
 claim a right to prevent you from copying, distributing, performing,
 displaying or creating derivative works based on the work as long as
 all references to Project Gutenberg are removed. Of course, we hope
-that you will support the Project Gutenberg‚Ñ¢ mission of promoting
-free access to electronic works by freely sharing Project Gutenberg‚Ñ¢
+that you will support the Project Gutenbergô mission of promoting
+free access to electronic works by freely sharing Project Gutenbergô
 works in compliance with the terms of this agreement for keeping the
-Project Gutenberg‚Ñ¢ name associated with the work. You can easily
+Project Gutenbergô name associated with the work. You can easily
 comply with the terms of this agreement by keeping this work in the
-same format with its attached full Project Gutenberg‚Ñ¢ License when
+same format with its attached full Project Gutenbergô License when
 you share it without charge with others.
 
 1.D. The copyright laws of the place where you are located also govern
@@ -21607,17 +21607,17 @@ in a constant state of change. If you are outside the United States,
 check the laws of your country in addition to the terms of this
 agreement before downloading, copying, displaying, performing,
 distributing or creating derivative works based on this work or any
-other Project Gutenberg‚Ñ¢ work. The Foundation makes no
+other Project Gutenbergô work. The Foundation makes no
 representations concerning the copyright status of any work in any
 country other than the United States.
 
 1.E. Unless you have removed all references to Project Gutenberg:
 
 1.E.1. The following sentence, with active links to, or other
-immediate access to, the full Project Gutenberg‚Ñ¢ License must appear
-prominently whenever any copy of a Project Gutenberg‚Ñ¢ work (any work
-on which the phrase ‚ÄúProject Gutenberg‚Äù appears, or with which the
-phrase ‚ÄúProject Gutenberg‚Äù is associated) is accessed, displayed,
+immediate access to, the full Project Gutenbergô License must appear
+prominently whenever any copy of a Project Gutenbergô work (any work
+on which the phrase ìProject Gutenbergî appears, or with which the
+phrase ìProject Gutenbergî is associated) is accessed, displayed,
 performed, viewed, copied or distributed:
 
     This eBook is for the use of anyone anywhere in the United States and most
@@ -21628,90 +21628,90 @@ performed, viewed, copied or distributed:
     are not located in the United States, you will have to check the laws
     of the country where you are located before using this eBook.
   
-1.E.2. If an individual Project Gutenberg‚Ñ¢ electronic work is
+1.E.2. If an individual Project Gutenbergô electronic work is
 derived from texts not protected by U.S. copyright law (does not
 contain a notice indicating that it is posted with permission of the
 copyright holder), the work can be copied and distributed to anyone in
 the United States without paying any fees or charges. If you are
-redistributing or providing access to a work with the phrase ‚ÄúProject
-Gutenberg‚Äù associated with or appearing on the work, you must comply
+redistributing or providing access to a work with the phrase ìProject
+Gutenbergî associated with or appearing on the work, you must comply
 either with the requirements of paragraphs 1.E.1 through 1.E.7 or
-obtain permission for the use of the work and the Project Gutenberg‚Ñ¢
+obtain permission for the use of the work and the Project Gutenbergô
 trademark as set forth in paragraphs 1.E.8 or 1.E.9.
 
-1.E.3. If an individual Project Gutenberg‚Ñ¢ electronic work is posted
+1.E.3. If an individual Project Gutenbergô electronic work is posted
 with the permission of the copyright holder, your use and distribution
 must comply with both paragraphs 1.E.1 through 1.E.7 and any
 additional terms imposed by the copyright holder. Additional terms
-will be linked to the Project Gutenberg‚Ñ¢ License for all works
+will be linked to the Project Gutenbergô License for all works
 posted with the permission of the copyright holder found at the
 beginning of this work.
 
-1.E.4. Do not unlink or detach or remove the full Project Gutenberg‚Ñ¢
+1.E.4. Do not unlink or detach or remove the full Project Gutenbergô
 License terms from this work, or any files containing a part of this
-work or any other work associated with Project Gutenberg‚Ñ¢.
+work or any other work associated with Project Gutenbergô.
 
 1.E.5. Do not copy, display, perform, distribute or redistribute this
 electronic work, or any part of this electronic work, without
 prominently displaying the sentence set forth in paragraph 1.E.1 with
 active links or immediate access to the full terms of the Project
-Gutenberg‚Ñ¢ License.
+Gutenbergô License.
 
 1.E.6. You may convert to and distribute this work in any binary,
 compressed, marked up, nonproprietary or proprietary form, including
 any word processing or hypertext form. However, if you provide access
-to or distribute copies of a Project Gutenberg‚Ñ¢ work in a format
-other than ‚ÄúPlain Vanilla ASCII‚Äù or other format used in the official
-version posted on the official Project Gutenberg‚Ñ¢ website
+to or distribute copies of a Project Gutenbergô work in a format
+other than ìPlain Vanilla ASCIIî or other format used in the official
+version posted on the official Project Gutenbergô website
 (www.gutenberg.org), you must, at no additional cost, fee or expense
 to the user, provide a copy, a means of exporting a copy, or a means
-of obtaining a copy upon request, of the work in its original ‚ÄúPlain
-Vanilla ASCII‚Äù or other form. Any alternate format must include the
-full Project Gutenberg‚Ñ¢ License as specified in paragraph 1.E.1.
+of obtaining a copy upon request, of the work in its original ìPlain
+Vanilla ASCIIî or other form. Any alternate format must include the
+full Project Gutenbergô License as specified in paragraph 1.E.1.
 
 1.E.7. Do not charge a fee for access to, viewing, displaying,
-performing, copying or distributing any Project Gutenberg‚Ñ¢ works
+performing, copying or distributing any Project Gutenbergô works
 unless you comply with paragraph 1.E.8 or 1.E.9.
 
 1.E.8. You may charge a reasonable fee for copies of or providing
-access to or distributing Project Gutenberg‚Ñ¢ electronic works
+access to or distributing Project Gutenbergô electronic works
 provided that:
 
-    ‚Ä¢ You pay a royalty fee of 20% of the gross profits you derive from
-        the use of Project Gutenberg‚Ñ¢ works calculated using the method
+    ï You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenbergô works calculated using the method
         you already use to calculate your applicable taxes. The fee is owed
-        to the owner of the Project Gutenberg‚Ñ¢ trademark, but he has
+        to the owner of the Project Gutenbergô trademark, but he has
         agreed to donate royalties under this paragraph to the Project
         Gutenberg Literary Archive Foundation. Royalty payments must be paid
         within 60 days following each date on which you prepare (or are
         legally required to prepare) your periodic tax returns. Royalty
         payments should be clearly marked as such and sent to the Project
         Gutenberg Literary Archive Foundation at the address specified in
-        Section 4, ‚ÄúInformation about donations to the Project Gutenberg
-        Literary Archive Foundation.‚Äù
+        Section 4, ìInformation about donations to the Project Gutenberg
+        Literary Archive Foundation.î
     
-    ‚Ä¢ You provide a full refund of any money paid by a user who notifies
+    ï You provide a full refund of any money paid by a user who notifies
         you in writing (or by e-mail) within 30 days of receipt that s/he
-        does not agree to the terms of the full Project Gutenberg‚Ñ¢
+        does not agree to the terms of the full Project Gutenbergô
         License. You must require such a user to return or destroy all
         copies of the works possessed in a physical medium and discontinue
-        all use of and all access to other copies of Project Gutenberg‚Ñ¢
+        all use of and all access to other copies of Project Gutenbergô
         works.
     
-    ‚Ä¢ You provide, in accordance with paragraph 1.F.3, a full refund of
+    ï You provide, in accordance with paragraph 1.F.3, a full refund of
         any money paid for a work or a replacement copy, if a defect in the
         electronic work is discovered and reported to you within 90 days of
         receipt of the work.
     
-    ‚Ä¢ You comply with all other terms of this agreement for free
-        distribution of Project Gutenberg‚Ñ¢ works.
+    ï You comply with all other terms of this agreement for free
+        distribution of Project Gutenbergô works.
     
 
 1.E.9. If you wish to charge a fee or distribute a Project
-Gutenberg‚Ñ¢ electronic work or group of works on different terms than
+Gutenbergô electronic work or group of works on different terms than
 are set forth in this agreement, you must obtain permission in writing
 from the Project Gutenberg Literary Archive Foundation, the manager of
-the Project Gutenberg‚Ñ¢ trademark. Contact the Foundation as set
+the Project Gutenbergô trademark. Contact the Foundation as set
 forth in Section 3 below.
 
 1.F.
@@ -21719,19 +21719,19 @@ forth in Section 3 below.
 1.F.1. Project Gutenberg volunteers and employees expend considerable
 effort to identify, do copyright research on, transcribe and proofread
 works not protected by U.S. copyright law in creating the Project
-Gutenberg‚Ñ¢ collection. Despite these efforts, Project Gutenberg‚Ñ¢
+Gutenbergô collection. Despite these efforts, Project Gutenbergô
 electronic works, and the medium on which they may be stored, may
-contain ‚ÄúDefects,‚Äù such as, but not limited to, incomplete, inaccurate
+contain ìDefects,î such as, but not limited to, incomplete, inaccurate
 or corrupt data, transcription errors, a copyright or other
 intellectual property infringement, a defective or damaged disk or
 other medium, a computer virus, or computer codes that damage or
 cannot be read by your equipment.
 
-1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the ‚ÄúRight
-of Replacement or Refund‚Äù described in paragraph 1.F.3, the Project
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the ìRight
+of Replacement or Refundî described in paragraph 1.F.3, the Project
 Gutenberg Literary Archive Foundation, the owner of the Project
-Gutenberg‚Ñ¢ trademark, and any other party distributing a Project
-Gutenberg‚Ñ¢ electronic work under this agreement, disclaim all
+Gutenbergô trademark, and any other party distributing a Project
+Gutenbergô electronic work under this agreement, disclaim all
 liability to you for damages, costs and expenses, including legal
 fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
 LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
@@ -21755,7 +21755,7 @@ the second copy is also defective, you may demand a refund in writing
 without further opportunities to fix the problem.
 
 1.F.4. Except for the limited right of replacement or refund set forth
-in paragraph 1.F.3, this work is provided to you ‚ÄòAS-IS‚Äô, WITH NO
+in paragraph 1.F.3, this work is provided to you ëAS-ISí, WITH NO
 OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
 LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
 
@@ -21770,30 +21770,30 @@ remaining provisions.
 
 1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
 trademark owner, any agent or employee of the Foundation, anyone
-providing copies of Project Gutenberg‚Ñ¢ electronic works in
+providing copies of Project Gutenbergô electronic works in
 accordance with this agreement, and any volunteers associated with the
-production, promotion and distribution of Project Gutenberg‚Ñ¢
+production, promotion and distribution of Project Gutenbergô
 electronic works, harmless from all liability, costs and expenses,
 including legal fees, that arise directly or indirectly from any of
 the following which you do or cause to occur: (a) distribution of this
-or any Project Gutenberg‚Ñ¢ work, (b) alteration, modification, or
-additions or deletions to any Project Gutenberg‚Ñ¢ work, and (c) any
+or any Project Gutenbergô work, (b) alteration, modification, or
+additions or deletions to any Project Gutenbergô work, and (c) any
 Defect you cause.
 
-Section 2. Information about the Mission of Project Gutenberg‚Ñ¢
+Section 2. Information about the Mission of Project Gutenbergô
 
-Project Gutenberg‚Ñ¢ is synonymous with the free distribution of
+Project Gutenbergô is synonymous with the free distribution of
 electronic works in formats readable by the widest variety of
 computers including obsolete, old, middle-aged and new computers. It
 exists because of the efforts of hundreds of volunteers and donations
 from people in all walks of life.
 
 Volunteers and financial support to provide volunteers with the
-assistance they need are critical to reaching Project Gutenberg‚Ñ¢‚Äôs
-goals and ensuring that the Project Gutenberg‚Ñ¢ collection will
+assistance they need are critical to reaching Project Gutenbergôís
+goals and ensuring that the Project Gutenbergô collection will
 remain freely available for generations to come. In 2001, the Project
 Gutenberg Literary Archive Foundation was created to provide a secure
-and permanent future for Project Gutenberg‚Ñ¢ and future
+and permanent future for Project Gutenbergô and future
 generations. To learn more about the Project Gutenberg Literary
 Archive Foundation and how your efforts and donations can help, see
 Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
@@ -21803,20 +21803,20 @@ Section 3. Information about the Project Gutenberg Literary Archive Foundation
 The Project Gutenberg Literary Archive Foundation is a non-profit
 501(c)(3) educational corporation organized under the laws of the
 state of Mississippi and granted tax exempt status by the Internal
-Revenue Service. The Foundation‚Äôs EIN or federal tax identification
+Revenue Service. The Foundationís EIN or federal tax identification
 number is 64-6221541. Contributions to the Project Gutenberg Literary
 Archive Foundation are tax deductible to the full extent permitted by
-U.S. federal laws and your state‚Äôs laws.
+U.S. federal laws and your stateís laws.
 
-The Foundation‚Äôs business office is located at 809 North 1500 West,
+The Foundationís business office is located at 809 North 1500 West,
 Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
-to date contact information can be found at the Foundation‚Äôs website
+to date contact information can be found at the Foundationís website
 and official page at www.gutenberg.org/contact
 
 Section 4. Information about Donations to the Project Gutenberg
 Literary Archive Foundation
 
-Project Gutenberg‚Ñ¢ depends upon and cannot survive without widespread
+Project Gutenbergô depends upon and cannot survive without widespread
 public support and donations to carry out its mission of
 increasing the number of public domain and licensed works that can be
 freely distributed in machine-readable form accessible by the widest
@@ -21847,15 +21847,15 @@ methods and addresses. Donations are accepted in a number of other
 ways including checks, online payments and credit card donations. To
 donate, please visit: www.gutenberg.org/donate.
 
-Section 5. General Information About Project Gutenberg‚Ñ¢ electronic works
+Section 5. General Information About Project Gutenbergô electronic works
 
 Professor Michael S. Hart was the originator of the Project
-Gutenberg‚Ñ¢ concept of a library of electronic works that could be
+Gutenbergô concept of a library of electronic works that could be
 freely shared with anyone. For forty years, he produced and
-distributed Project Gutenberg‚Ñ¢ eBooks with only a loose network of
+distributed Project Gutenbergô eBooks with only a loose network of
 volunteer support.
 
-Project Gutenberg‚Ñ¢ eBooks are often created from several printed
+Project Gutenbergô eBooks are often created from several printed
 editions, all of which are confirmed as not protected by copyright in
 the U.S. unless a copyright notice is included. Thus, we do not
 necessarily keep eBooks in compliance with any particular paper
@@ -21864,7 +21864,7 @@ edition.
 Most people start at our website which has the main PG search
 facility: www.gutenberg.org.
 
-This website includes information about Project Gutenberg‚Ñ¢,
+This website includes information about Project Gutenbergô,
 including how to make donations to the Project Gutenberg Literary
 Archive Foundation, how to help produce our new eBooks, and how to
 subscribe to our email newsletter to hear about new eBooks.

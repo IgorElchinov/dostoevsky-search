@@ -1,10 +1,12 @@
-#include "haffman.h"
+// #include "haffman.h"
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
 #include <limits.h>
+#include <time.h>
+#include <unistd.h>
 
 enum {
     UNIQUE_SYMBOLS = 255,
@@ -13,6 +15,20 @@ enum {
     BITS_IN_INTEGER = 31,
     SYMBOLS_TO_WRITE = 2048
 };
+
+typedef struct HaffmanNode {
+    unsigned char symbol;
+    int count;
+    char bit;
+    struct HaffmanNode *left;
+    struct HaffmanNode *right;
+} HaffmanNode;
+
+typedef struct HaffmanCode {
+    unsigned char symbol;
+    int code;
+    char code_length;
+} HaffmanCode;
 
 void
 swap_pairs(HaffmanNode *a, HaffmanNode *b) {
@@ -247,9 +263,9 @@ decompress(char *compressed_filename, char *decompressed_filename) {
     int size = ftell(compressed_file) - 1;
     fseek(compressed_file, 0, SEEK_SET);
     char *decompressed_str = calloc(BITS_IN_BYTE + SYMBOLS_TO_WRITE, sizeof(*decompressed_str));
-    HaffmanCode *sorted_code_table = calloc(UNIQUE_SYMBOLS, sizeof(*sorted_code_table)); 
-    uint8_t same_length_symbols_count = 0, cur = 0, code_length = 0, unique_symbols = 0, read_symbols = 0;
-    uint32_t c, symbol_code = 0, symbols_to_write = 0, index = 0;
+    HaffmanCode *sorted_code_table = calloc(UNIQUE_SYMBOLS, sizeof(*sorted_code_table));
+    uint8_t same_length_symbols_count = 0, cur = 0, code_length = 0, unique_symbols = 0, read_symbols = 0, different_lengths = 0;
+    uint32_t c, symbol_code = 0, symbols_to_write = 0, index = 0, max_code = 0;
     while (1) {
         same_length_symbols_count = getc(compressed_file);
         size--;
@@ -273,11 +289,23 @@ decompress(char *compressed_filename, char *decompressed_filename) {
                 sorted_code_table[i].code |= ((c >> (cur % 8)) & 1u) << j;
                 cur++;
             }
+            if (sorted_code_table[i].code > max_code) {
+                max_code = sorted_code_table[i].code;
+            }
             read_symbols++;
         }
         unique_symbols += read_symbols;
+        different_lengths++;
         cur = 0;
         read_symbols = 0;
+    }
+    char **unsorted_code_table = calloc(UNIQUE_SYMBOLS, sizeof(*unsorted_code_table));
+    unsorted_code_table[0] = calloc(UNIQUE_SYMBOLS * (max_code + 1), sizeof(**unsorted_code_table));
+    for (int i = 1; i < UNIQUE_SYMBOLS; ++i) {
+        unsorted_code_table[i] = unsorted_code_table[i - 1] + (max_code + 1);
+    }
+    for (int i = 0; i < UNIQUE_SYMBOLS; ++i) {
+        unsorted_code_table[sorted_code_table[i].code_length][sorted_code_table[i].code] = sorted_code_table[i].symbol;
     }
     cur = 0;
     for (int i = 0; i < size; i++) {
@@ -286,16 +314,11 @@ decompress(char *compressed_filename, char *decompressed_filename) {
             symbol_code *= 2;
             symbol_code |= ((c >> j) & 1u) << 0;
             cur++;
-            while (sorted_code_table[index].code_length == cur) {
-                if (symbol_code == sorted_code_table[index].code) {
-                    decompressed_str[symbols_to_write] = sorted_code_table[index].symbol;
-                    symbols_to_write++;
-                    cur = 0;
-                    symbol_code = 0;
-                    index = 0;
-                    break;
-                }
-                index++;
+            if (unsorted_code_table[cur][symbol_code] != 0) {
+                decompressed_str[symbols_to_write] = unsorted_code_table[cur][symbol_code];
+                symbols_to_write++;
+                cur = 0;
+                symbol_code = 0;
             }
         }
         if (symbols_to_write >= SYMBOLS_TO_WRITE) {
@@ -314,6 +337,26 @@ decompress(char *compressed_filename, char *decompressed_filename) {
     }
     fclose(compressed_file);
     fclose(decompressed_file);
+    free(*unsorted_code_table);
+    free(unsorted_code_table);
     free(decompressed_str);
     free(sorted_code_table);
+}
+
+int
+main() {
+    double time_spent = 0.0;
+    clock_t begin = clock();
+    compress("War_and_peace.txt", "Compressed_War_and_peace.txt");
+    clock_t end = clock();
+    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+    printf("The compress time is %f seconds\n", time_spent);
+    time_spent = 0.0;
+    begin = clock();
+    decompress("Compressed_War_and_peace.txt", "decompressed_War_and_peace.txt");
+    end = clock();
+    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+    printf("The decompress time is %f seconds\n", time_spent);
+    // compress("q.txt", "q_c.txt", "decompressed_war_and_peace.txt");
+    // decompress("q_c.txt", "dq_c.txt");
 }
