@@ -1,3 +1,5 @@
+![Lupa](https://upload.wikimedia.org/wikipedia/commons/f/f4/Lupa.na.encyklopedii.jpg)
+
 # DOSTOEVSKY_SEARCH
 Use make to build project
 
