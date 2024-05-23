@@ -1,4 +1,4 @@
-![Lupa](https://www.ondrugdelivery.com/wp-content/uploads/2021/08/123_August2021_Napoleon_Featured2.jpg)
+![image](https://e.radikal.host/2023/06/19/2023-06-19-18-29-17.gif)
 
 # DOSTOEVSKY_SEARCH
 Use `make` to build project
