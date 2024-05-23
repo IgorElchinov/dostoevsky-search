@@ -1,4 +1,4 @@
-![Lupa](https://upload.wikimedia.org/wikipedia/commons/f/f4/Lupa.na.encyklopedii.jpg)
+![Lupa](https://www.ondrugdelivery.com/wp-content/uploads/2021/08/123_August2021_Napoleon_Featured2.jpg)
 
 # DOSTOEVSKY_SEARCH
 Use make to build project
